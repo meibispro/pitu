@@ -85,7 +85,7 @@
     },
               hotkey: true,
               //screenshot: true,
-              autoplay: false,
+              autoplay: true,
               volume: 0.9,
               fullscreen: true,
                 fullscreenWeb: true,
