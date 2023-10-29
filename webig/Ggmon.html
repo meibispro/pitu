@@ -1,0 +1,87 @@
+Aquí tienes un ejemplo de código HTML y JavaScript que puede abrir un enlace en una ventana emergente (popup) cuando se hace clic en un botón:
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Abrir enlace en un popup</title>
+</head>
+<body>
+    <button onclick="abrirPopup()">Abrir enlace en popup</button>
+
+    <script>
+        function abrirPopup() {
+            // URL del enlace que deseas abrir en el popup
+            var url = "https://www.ejemplo.com";
+
+            // Abre el enlace en una ventana emergente con propiedades personalizadas
+            window.open(url, "_blank", "width=600,height=400,scrollbars=yes");
+        }
+    </script>
+</body>
+</html>
+```
+
+En este código, cuando se hace clic en el botón, se llama a la función `abrirPopup()`, que utiliza `window.open` para abrir el enlace en una nueva ventana emergente. Puedes personalizar las propiedades de la ventana emergente según tus necesidades, como el tamaño y la presencia de barras de desplazamiento. Asegúrate de que tu navegador permita ventanas emergentes para que este código funcione.
+
+
+
+
+Puedes lograr que un botón se vuelva rojo al hacer clic en él utilizando HTML y CSS junto con JavaScript. Aquí hay un ejemplo de código:
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Botón Rojo</title>
+    <style>
+        .rojo {
+            background-color: red;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <button id="miBoton" onclick="cambiarColor()">Haz clic para hacerlo rojo</button>
+
+    <script>
+        function cambiarColor() {
+            var boton = document.getElementById("miBoton");
+            boton.classList.add("rojo");
+        }
+    </script>
+</body>
+</html>
+```
+
+En este código, el botón inicialmente es de color predeterminado. Cuando haces clic en él, la función `cambiarColor()` se ejecuta y agrega una clase llamada "rojo" al botón. La clase "rojo" está definida en la sección CSS del documento y cambia el fondo del botón a rojo y el texto a blanco.
+
+Al hacer clic en el botón, este cambiará su apariencia a rojo. Puedes personalizar el estilo CSS según tus preferencias.
+
+
+
+Claro, aquí tienes un ejemplo de cómo crear un botón que abre una ventana emergente con una página de ejemplo. En este caso, abrirá la página de ejemplo de Google:
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Botón con Ventana Emergente</title>
+</head>
+<body>
+    <button onclick="abrirVentanaEmergente()">Abrir Ventana Emergente</button>
+
+    <script>
+        function abrirVentanaEmergente() {
+            // URL de la página de ejemplo
+            var url = "https://www.example.com";
+
+            // Abre la página de ejemplo en una ventana emergente
+            window.open(url, "_blank", "width=600, height=400");
+        }
+    </script>
+</body>
+</html>
+```
+
+Cuando haces clic en el botón "Abrir Ventana Emergente", se ejecuta la función `abrirVentanaEmergente()`, que utiliza `window.open` para abrir la página de ejemplo en una nueva ventana emergente. Puedes reemplazar la URL por la que desees abrir en la ventana emergente. Asegúrate de que tu navegador permita las ventanas emergentes para que este código funcione.

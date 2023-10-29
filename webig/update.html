@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Mi Aplicación Web</title>
+</head>
+
+<body>
+    <h1>Mi Aplicación Web</h1>
+
+    <script>
+        // Define la versión de la página web
+        const webVersion = "1.0";
+
+        // Redirige a la URL personalizada para obtener la versión de la aplicación
+        window.location.href = "getappversion://";
+
+        // Espera un tiempo para recibir una respuesta
+        setTimeout(function () {
+            try {
+                const appVersion = window.versionNumber;
+
+                if (appVersion) {
+                    console.log("Versión de la aplicación:", appVersion);
+                    console.log("Versión de la página web:", webVersion);
+
+                    // Compara las versiones
+                    if (compareVersions(appVersion, webVersion) < 0) {
+                        const userResponse = window.confirm("Una nueva versión de la aplicación está disponible. ¿Desea actualizar?");
+                        if (userResponse) {
+                            // Redirige a la página de actualización
+                            window.location.href = "https://www.google.com";
+                        } else {
+                            // Cierra la aplicación
+                            window.close();
+                        }
+                    } else {
+                        alert("La aplicación está actualizada.");
+                    }
+                } else {
+                    console.error("No se pudo obtener la versión de la aplicación.");
+                }
+            } catch (error) {
+                console.error('Error al obtener los datos de la aplicación:', error);
+                alert("No se pudieron obtener los datos de la aplicación.");
+            }
+        }, 2000);
+
+        // Función para comparar versiones
+        function compareVersions(a, b) {
+            const pa = a.split('.');
+            const pb = b.split('.');
+            for (let i = 0; i < 3; i++) {
+                const na = Number(pa[i]);
+                const nb = Number(pb[i]);
+                if (na > nb) return 1;
+                if (nb > na) return -1;
+                if (!isNaN(na) && isNaN(nb)) return 1;
+                if (isNaN(na) && !isNaN(nb)) return -1;
+            }
+            return 0;
+        }
+    </script>
+</body>
+
+</html>

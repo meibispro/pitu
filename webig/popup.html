@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    /* Estilo para la ventana emergente */
+    .popup {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      z-index: 999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Estilo para el contenido de la ventana emergente */
+    .popup-content {
+      background: #fff;
+      border-radius: 5px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      animation: popup-fade 0.5s ease-in-out;
+    }
+
+    @keyframes popup-fade {
+      from {
+        transform: scale(0.8);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a id="twitterLink" class="cta-btn text-nowrap" href="https://mavita.web.app/" title="Open link">
+    <i class="fa fa-twitter"></i> Twitter
+  </a>
+
+  <script>
+  // Obtiene la URL del enlace original
+  var originalLink = this.getAttribute("href");
+
+
+  // Cierra la ventana emergente al hacer clic en el botón "Cerrar"
+
+
+
+
+
+document.getElementById("twitterLink").addEventListener("click", function(e) {
+  e.preventDefault();
+  const originalLink = this.getAttribute("href");
+
+  const screenWidth = window.innerWidth;
+  const screenHeight = window.innerHeight;
+
+  const popup = window.open(originalLink, "popupWindow", `width=${screenWidth},height=${screenHeight},top=0,left=0`);
+  
+  if (!popup) {
+    alert("La ventana emergente está bloqueada por el navegador. Habilita las ventanas emergentes en la configuración del navegador.");
+  } else {
+    popup.focus(); // Coloca la ventana emergente en primer plano
+
+    // Agregar un botón de cierre a la ventana emergente
+    const closeBtn = popup.document.createElement("button");
+    closeBtn.textContent = "Cerrar Ventana";
+    closeBtn.addEventListener("click", function() {
+      popup.close();
+    });
+    popup.document.body.appendChild(closeBtn);
+  }
+});
+
+  </script>
+</body>
+</html>
+

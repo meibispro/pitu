@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Redirección</title>
+</head>
+HOLA
+<body>
+    <script>
+        // Realiza una solicitud para obtener el archivo JSON
+        fetch('https://ggbell.000webhostapp.com/bloggger/archivo.json')
+            .then(response => response.json())
+            .then(data => {
+                // Extrae la URL de redirección del archivo JSON
+                const redireccionURL = data.redireccionURL;
+
+                // Verifica la opción "nuevaVentana" en el archivo JSON
+                const nuevaVentana = data.nuevaVentana;
+
+                // Verifica la opción "temporizador" en el archivo JSON
+                const temporizador = data.temporizador;
+
+                // Crea un elemento <a> para la redirección
+                const enlace = document.createElement('a');
+                enlace.href = redireccionURL;
+
+                // Si la opción es "on", establece el atributo target="_blank"
+                if (nuevaVentana === 'on') {
+                    enlace.target = '_blank';
+                }
+
+                // Agrega un temporizador para la redirección
+                setTimeout(function() {
+                    // Simula un clic en el enlace para redirigir
+                    enlace.click();
+                }, temporizador * 1000); // Multiplicamos por 1000 para convertir segundos a milisegundos
+            })
+            .catch(error => {
+                console.error('Error al cargar el archivo JSON:', error);
+            });
+    </script>
+</body>
+</html>
