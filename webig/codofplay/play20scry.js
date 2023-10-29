@@ -1,6 +1,4 @@
-
-  
-  /**
+/**
  * Better Video and playlist jQuery plugin
  * Version: 2.0
  */
