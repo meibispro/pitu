@@ -1,0 +1,2243 @@
+
+<!--foto portada abierto-->
+
+<div hidden>
+
+ <div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgeTKB5enFMJRyZ2OmQF-QAid4cx9Lpr-71xFYcYw9J-hIi2jMSndBpJICD636Zcw_0c5eocfId4crdM9I-1YPiU-2MZ2r9bSmZ1g7o4CJ8fLPvaQFg4Bzn-rRI_flfkPd67o-tHhA1e8XoQ36pqnoUEXKUYm_ktTQrFKYEvWsAvLXusxiCPIapDgZV5hQ/s1024/south-park.jpg" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" height="320" data-original-height="1024" data-original-width="718" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgeTKB5enFMJRyZ2OmQF-QAid4cx9Lpr-71xFYcYw9J-hIi2jMSndBpJICD636Zcw_0c5eocfId4crdM9I-1YPiU-2MZ2r9bSmZ1g7o4CJ8fLPvaQFg4Bzn-rRI_flfkPd67o-tHhA1e8XoQ36pqnoUEXKUYm_ktTQrFKYEvWsAvLXusxiCPIapDgZV5hQ/s320/south-park.jpg"/></a></div>
+  
+  </div>
+  <!--foto portada abierto-->
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+
+ 
+ <style>body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  }
+  
+  #video-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 30vh;
+  z-index: 1;
+  }
+  
+  #artplayer-app {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  }
+  
+  #content {
+  margin-top: 30vh; /* Utiliza "margin-top" en lugar de "padding-top" para permitir el desplazamiento del contenido */
+  }
+  
+  /* Estilo de ejemplo para el contenido */
+  .content-section {
+  background-color: #;
+  padding: 10px;
+  
+  }
+  
+  </style>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+</head>
+<meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'/>
+<body>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+   <script src="https://cdn.jsdelivr.net/npm/artplayer/dist/artplayer.js"></script>
+<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.teal-light_blue.min.css" />
+<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+
+   <div id="video-container">
+  <div id="artplayer-app"></div>
+  <!-- Nuevo contenedor -->
+  <div id="video-info-container">
+    <!-- Contenido de tu nuevo contenedor -->
+    
+    <select id="searchSelect">
+    <option value="">Temporadas</option>
+   <!--   <option value="all">Mostrar Todo</option>  -->
+    <option value="T1">Temporada 1</option>
+<option value="T2">Temporada 2</option>
+<option value="T3">Temporada 3</option>
+<option value="T4">Temporada 4</option>
+<option value="T5">Temporada 5</option>
+<option value="T6">Temporada 6</option>
+<option value="T7">Temporada 7</option>
+<option value="T8">Temporada 8</option>
+<option value="T9">Temporada 9</option>
+<option value="T10">Temporada 10</option>
+<option value="T11">Temporada 11</option>
+<option value="T12">Temporada 12</option>
+<option value="T13">Temporada 13</option>
+<option value="T14">Temporada 14</option>
+<option value="T15">Temporada 15</option>
+<option value="T16">Temporada 16</option>
+<option value="T17">Temporada 17</option>
+<option value="T18">Temporada 18</option>
+<option value="T19">Temporada 19</option>
+<option value="T20">Temporada 20</option>
+<option value="T21">Temporada 21</option>
+<option value="T22">Temporada 22</option>
+<option value="T23">Temporada 23</option>
+<option value="T24">Temporada 24</option>
+<option value="T25">Temporada 25</option>
+<option value="T26">Temporada 26</option>
+
+  </select>
+
+  <input type="text" id="search" placeholder="Buscar">
+
+ <style>
+        /* Estilos para el contenedor del video y el fondo */
+        .video-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px; /* Ajusta el ancho máximo según tus necesidades */
+        }
+        
+        .video-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            filter: blur(10px); /* Ajusta el valor del desenfoque según tus preferencias */
+            z-index: -1;
+        }
+        
+        #artplayer-app {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+    
+    
+  </div>
+</div>
+
+  <div id="content">
+    <!-- Contenido de la página -->
+    <div class="content-section">
+
+   <ol id="bvideo_playlist">
+  
+</ol>
+    <!-- Agrega más contenido según sea necesario -->
+  
+      <p>Este es un ejemplo de contenido.</p>
+    </div>
+    <!-- Agrega más contenido según sea necesario -->
+  </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  // Función para filtrar la lista de reproducción en función de la búsqueda BUSCADOR
+  function filterPlaylist(searchTerm) {
+    searchTerm = searchTerm.toLowerCase();
+    $("#bvideo_playlist li").each(function() {
+      var listItemText = $(this).text().toLowerCase();
+      if (searchTerm === "all" || listItemText.includes(searchTerm)) {
+        $(this).show();
+      } else {
+        $(this).hide();
+      }
+    });
+  }
+
+  $(document).ready(function() {
+    // Establecer la búsqueda predeterminada
+    var searchTermDefault = "";
+    $("#search").val(searchTermDefault);
+    filterPlaylist(searchTermDefault);
+
+    // Agregar un evento de entrada de texto al campo de búsqueda
+    $("#search").on("input", function() {
+      var searchTerm = $(this).val();
+      filterPlaylist(searchTerm);
+    });
+
+    // Agregar un evento al botón de búsqueda
+    $("#searchButton").on("click", function() {
+      var searchTerm = $("#search").val();
+      filterPlaylist(searchTerm);
+    });
+
+    // Agregar eventos a los botones de búsqueda predeterminada
+    $("#defaultButtons button").on("click", function() {
+      var searchTerm = $(this).data("search");
+      $("#search").val(searchTerm);
+      filterPlaylist(searchTerm);
+    });
+
+    // Agregar evento para el cambio en el elemento select
+    $("#searchSelect").on("change", function() {
+      var searchTerm = $(this).val();
+      filterPlaylist(searchTerm);
+      $("#search").val(""); // Vaciar el cuadro de texto al seleccionar una opción
+    });
+  });
+</script>
+
+
+
+
+
+<script>
+    // Obtén una referencia a la lista de videos y al input de búsqueda
+    const videoList = document.getElementById("bvideo_playlist");
+    const searchInput = document.getElementById("searchInput");
+
+    // Agrega un evento al botón de búsqueda para realizar la búsqueda
+    document.getElementById("searchButton").addEventListener("click", function () {
+        const searchTerm = searchInput.value.toLowerCase();
+
+        // Recorre los elementos de la lista y muestra/oculta según la búsqueda
+        Array.from(videoList.getElementsByTagName("li")).forEach(function (item) {
+            const videoTitle = item.textContent.toLowerCase();
+            if (videoTitle.includes(searchTerm)) {
+                item.style.display = "list-item"; // Muestra el elemento
+            } else {
+                item.style.display = "none"; // Oculta el elemento
+            }
+        });
+    });
+</script>
+
+
+    <script>
+        var video_playlist = [
+           {
+      "name": "T1 - 1 Cartman tiene una sonda anal",
+      "link": "https://archive.org/download/1_20210115_202101/1.mpeg4",
+      "size": 5000,
+      "poster": "",
+      "numero": 1
+    },
+    {
+      "name": "T1 - 2 Fórmula para ganar peso 4000",
+      "link": "https://archive.org/download/1_20210115_202101/2.mpeg4",
+      "size": 5000,
+      "poster": "",
+      "numero": 2
+    },
+    {
+      "name": "T1 - 3 Volcán",
+      "link": "https://archive.org/download/1_20210115_202101/3.mpeg4",
+      "size": 5000,
+      "poster": "",
+      "numero": 3
+    },
+    {
+      "name": "T1 - 4 El gran crucero del Gran Al",
+      "link": "https://archive.org/download/1_20210115_202101/4.mpeg4",
+      "size": 5000,
+      "poster": "",
+      "numero": 4
+    },
+    {
+      "name": "T1 - 5 Un elefante hace el amor con un cerdo",
+      "link": "https://archive.org/download/1_20210115_202101/5.mpeg4",
+      "size": 5000,
+      "poster": "",
+      "numero": 5
+    },
+    {
+      "name": "T1 - 6 Muerte",
+      "link": "https://archive.org/download/1_20210115_202101/6.mpeg4",
+      "size": 5000,
+      "poster": "",
+      "numero": 6
+    },
+    {
+      "name": "T1 - 7 Conjuntivitis",
+      "link": "https://archive.org/download/1_20210115_202101/7.mpeg4",
+      "size": 5000,
+      "poster": "",
+      "numero": 7
+    },
+    {
+      "name": "T1 - 8 Damián",
+      "link": "https://archive.org/download/1_20210115_202101/8.mpeg4",
+      "size": 5000,
+      "poster": "",
+      "numero": 8
+    },
+    {
+      "name": "T1 - 9 Paco el Flaco",
+      "link": "https://archive.org/download/1_20210115_202101/9.mpeg4",
+      "size": 5000,
+      "poster": "",
+      "numero": 9
+    },
+    {
+      "name": "T1 - 10 El Señor Mojón, el espíritu de la navidad",
+      "link": "https://archive.org/download/1_20210115_202101/10.mpeg4",
+      "size": 5000,
+      "poster": "",
+      "numero": 10
+    },
+    {
+      "name": "T1 - 11 Cirugía plástica de Tom",
+      "link": "https://archive.org/download/1_20210115_202101/11.mpeg4",
+      "size": 5000,
+      "poster": "",
+      "numero": 11
+    },
+    {
+      "name": "T1 - 12 Mecha-Streisand",
+      "link": "https://archive.org/download/1_20210115_202101/12.mpeg4",
+      "size": 5000,
+      "poster": "",
+      "numero": 12
+    },
+    {
+      "name": "T1 - 13 La madre de Cartman es una guarra",
+      "link": "https://archive.org/download/1_20210115_202101/13.mpeg4",
+      "size": 5000,
+      "poster": "",
+      "numero": 13
+    },{
+            "name": "T2 - No sin mi ano",
+            "link": "https://archive.org/download/14_20210115/1.mpeg4",
+            "size": 5000,
+            "poster": ""
+        },
+        {
+            "name": "T2 - La madre de Cartman sigue siendo una guarra",
+            "link": "https://archive.org/download/14_20210115/2.mpeg4",
+            "size": 5000,
+            "poster": ""
+        },
+        {
+            "name": "T2 - El amante de gallinas",
+            "link": "https://archive.org/download/14_20210115/3.mpeg4",
+            "size": 5000,
+            "poster": ""
+        },
+        {
+            "name": "T2 - Ike's Wee Wee",
+            "link": "https://archive.org/download/14_20210115/4.mpeg4",
+            "size": 5000,
+            "poster": ""
+        },
+        {
+            "name": "T2 - La mujer unida a un feto",
+            "link": "https://archive.org/download/14_20210115/5.mpeg4",
+            "size": 5000,
+            "poster": ""
+        },
+        {
+            "name": "T2 - La rana mexicana del sur de Sri Lanka",
+            "link": "https://archive.org/download/14_20210115/6.mpeg4",
+            "size": 5000,
+            "poster": ""
+        },
+        {
+            "name": "T2 - La ciudad al borde de la eternidad",
+            "link": "https://archive.org/download/14_20210115/7.mpeg4",
+            "size": 5000,
+            "poster": ""
+        },
+        {
+            "name": "T2 - El verano apesta",
+            "link": "https://archive.org/download/14_20210115/8.mpeg4",
+            "size": 5000,
+            "poster": ""
+        },
+        {
+            "name": "T2 - Las bolitas saladas de chocolate del Chef",
+            "link": "https://archive.org/download/14_20210115/9.mpeg4",
+            "size": 5000,
+            "poster": ""
+        },
+        {
+            "name": "T2 - Varicela",
+            "link": "https://archive.org/download/14_20210115/10.mpeg4",
+            "size": 5000,
+            "poster": ""
+        },
+        {
+            "name": "T2 - Roger Ebert debería dejar las comidas grasientas",
+            "link": "https://archive.org/download/14_20210115/11.mpeg4",
+            "size": 5000,
+            "poster": ""
+        },
+        {
+            "name": "T2 - Casas club",
+            "link": "https://archive.org/download/14_20210115/12.mpeg4",
+            "size": 5000,
+            "poster": ""
+        },
+        {
+            "name": "T2 - Dias de vacas",
+            "link": "https://archive.org/download/14_20210115/13.mpeg4",
+            "size": 5000,
+            "poster": ""
+        },
+        {
+            "name": "T2 - Ayuda al Chef",
+            "link": "https://archive.org/download/14_20210115/14.mpeg4",
+            "size": 5000,
+            "poster": ""
+        },
+        {
+            "name": "T2 - Pez espeluznante",
+            "link": "https://archive.org/download/14_20210115/15.mpeg4",
+            "size": 5000,
+            "poster": ""
+        },
+        {
+            "name": "T2 - Feliz navidad Charlie Manson",
+            "link": "https://archive.org/download/14_20210115/16.mpeg4",
+            "size": 5000,
+            "poster": ""
+        },
+        {
+            "name": "T2 - Gnomos",
+            "link": "https://archive.org/download/14_20210115/17.mpeg4",
+            "size": 5000,
+            "poster": ""
+        },
+        {
+            "name": "T2 - El troglodita congelado",
+            "link": "https://archive.org/download/14_20210115/18.mpeg4",
+            "size": 5000,
+            "poster": ""
+        },{
+      "name": "T3 - Selva puta selva",
+      "link": "https://archive.org/download/15_20210115/1.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T3 - Combustión espontánea",
+      "link": "https://archive.org/download/15_20210115/2.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T3 - El Sucubo",
+      "link": "https://archive.org/download/15_20210115/3.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T3 - Tweek contra Craig",
+      "link": "https://archive.org/download/15_20210115/4.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T3 - Jakovasaurius",
+      "link": "https://archive.org/download/15_20210115/5.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T3 - El panda acosado sexualmente",
+      "link": "https://archive.org/download/15_20210115/6.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T3 - Orgía felina",
+      "link": "https://archive.org/download/15_20210115/7.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T3 - Dos tíos en una bañera caliente",
+      "link": "https://archive.org/download/15_20210115/8.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T3 - Jewbilee",
+      "link": "https://archive.org/download/15_20210115/9.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T3 - ChinPokoMon",
+      "link": "https://archive.org/download/15_20210115/10.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T3 - Paco el Flaco en el espacio",
+      "link": "https://archive.org/download/15_20210115/11.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T3 - El espeluznante misterio del fantasma pirata",
+      "link": "https://archive.org/download/15_20210115/12.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T3 - El mono fónico",
+      "link": "https://archive.org/download/15_20210115/13.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T3 - Guerra",
+      "link": "https://archive.org/download/15_20210115/14.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T3 - Un clásico de navidad del Sr.Mojón",
+      "link": "https://archive.org/download/15_20210115/15.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T3 - ¿Estás ahí Dios? Soy yo, Jesús",
+      "link": "https://archive.org/download/15_20210115/16.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T3 - Concierto mundial",
+      "link": "https://archive.org/download/15_20210115/17.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },{
+      "name": "T4 - El tonto delito de odio de Cartman 2000",
+      "link": "https://archive.org/download/11_20210115_202101/1.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T4 - La pipa del hada de los dientes 2000",
+      "link": "https://archive.org/download/11_20210115_202101/2.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T4 - Quintillizas 2000",
+      "link": "https://archive.org/download/11_20210115_202101/3.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T4 - Timmy 2000",
+      "link": "https://archive.org/download/11_20210115_202101/4.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T4 - Pip (grandes esperanzas)",
+      "link": "https://archive.org/download/11_20210115_202101/5.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T4 - Cartman entra en la NAMLA",
+      "link": "https://archive.org/download/11_20210115_202101/6.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T4 - Tampones de pelo de Cherokee",
+      "link": "https://archive.org/download/11_20210115_202101/7.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T4 - El Chef se convierte al Islam",
+      "link": "https://archive.org/download/11_20210115_202101/8.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T4 - Algo que puedes hacer con tu dedo",
+      "link": "https://archive.org/download/11_20210115_202101/9.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T4 - Van los minusválidos al infierno...",
+      "link": "https://archive.org/download/11_20210115_202101/10.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T4 - Probablemente",
+      "link": "https://archive.org/download/11_20210115_202101/11.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T4 - Cuarto grado",
+      "link": "https://archive.org/download/11_20210115_202101/12.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T4 - El guardian del asimilador",
+      "link": "https://archive.org/download/11_20210115_202101/13.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T4 - Accion de gracias",
+      "link": "https://archive.org/download/11_20210115_202101/14.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T4 - Campamento para gordos",
+      "link": "https://archive.org/download/11_20210115_202101/15.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T4 - La loca y molesta aventura",
+      "link": "https://archive.org/download/11_20210115_202101/16.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T4 - Unas mierdosas navidades",
+      "link": "https://archive.org/download/11_20210115_202101/17.mpeg4",
+      "size": 5000,
+      "poster": ""
+    }, {
+      "name": "T5 - Scott Tenorman debe morir",
+      "link": "https://archive.org/download/9_20210115/1.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T5 - Mierda por todos lados",
+      "link": "https://archive.org/download/9_20210115/2.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T5 - Pelea de inválidos",
+      "link": "https://archive.org/download/9_20210115/3.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T5 - Los súper amigos",
+      "link": "https://archive.org/download/9_20210115/4.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T5 - Terrance y Phillip: Detrás del pedo",
+      "link": "https://archive.org/download/9_20210115/5.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T5 - Cartmalandia",
+      "link": "https://archive.org/download/9_20210115/6.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T5 - El uso adecuado del condón",
+      "link": "https://archive.org/download/9_20210115/7.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T5 - Toalla",
+      "link": "https://archive.org/download/9_20210115/8.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T5 - Bin Laden tiene unos pantalones penosos",
+      "link": "https://archive.org/download/9_20210115/9.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T5 - Como comer con tu culo",
+      "link": "https://archive.org/download/9_20210115/10.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T5 - La entidad",
+      "link": "https://archive.org/download/9_20210115/11.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T5 - Aqui vienen los vecinos",
+      "link": "https://archive.org/download/9_20210115/12.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T5 - Kenny muere",
+      "link": "https://archive.org/download/9_20210115/13.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T5 - El propio episodio de Butter",
+      "link": "https://archive.org/download/9_20210115/14.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },{
+      "name": "T6 - Sacudida friki",
+      "link": "https://archive.org/download/9_20210118/1.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T6 - Jared tiene ayudantes",
+      "link": "https://archive.org/download/9_20210118/2.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T6 - Asspen",
+      "link": "https://archive.org/download/9_20210118/3.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T6 - El tráiler de la nueva película de Terrance y Philip",
+      "link": "https://archive.org/download/9_20210118/4.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T6 - Diversión con la ternera",
+      "link": "https://archive.org/download/9_20210118/5.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T6 - Profesor Caos",
+      "link": "https://archive.org/download/9_20210118/6.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T6 - Los Simpson ya lo han hecho",
+      "link": "https://archive.org/download/9_20210118/7.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T6 - Amor católico rojo ardiente",
+      "link": "https://archive.org/download/9_20210118/8.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T6 - Liberad a Hat",
+      "link": "https://archive.org/download/9_20210118/9.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T6 - Las tetas de Bebe destruyen la sociedad",
+      "link": "https://archive.org/download/9_20210118/10.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T6 - Secuestrar niños no es gracioso",
+      "link": "https://archive.org/download/9_20210118/11.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T6 - Una escalera hacia el cielo",
+      "link": "https://archive.org/download/9_20210118/12.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T6 - El retorno del Señor de los anillos a las Dos Torres",
+      "link": "https://archive.org/download/9_20210118/13.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T6 - El campo mortal de la tolerancia",
+      "link": "https://archive.org/download/9_20210118/14.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T6 - El mierda más grande del universo",
+      "link": "https://archive.org/download/9_20210118/15.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T6 - Yo y mi futuro yo",
+      "link": "https://archive.org/download/9_20210118/16.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T6 - Abajo el trineo rojo",
+      "link": "https://archive.org/download/9_20210118/17.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },{
+      "name": "T7 - Soy un poco country",
+      "link": "https://archive.org/download/1_20210118/1.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T7 - Inválidos loKos",
+      "link": "https://archive.org/download/1_20210118/2.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T7 - Papel Higiénico",
+      "link": "https://archive.org/download/1_20210118/3.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T7 - Suspendido",
+      "link": "https://archive.org/download/1_20210118/4.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T7 - Culo gordo y cabeza tortilla",
+      "link": "https://archive.org/download/1_20210118/5.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T7 - Pequeños Erradicadores del crimen",
+      "link": "https://archive.org/download/1_20210118/6.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T7 - La codicia del piel roja",
+      "link": "https://archive.org/download/1_20210118/7.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T7 - ¡South Park es gay!",
+      "link": "https://archive.org/download/1_20210118/8.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T7 - Rock cristiano duro",
+      "link": "https://archive.org/download/1_20210118/9.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T7 - Amanecer gris",
+      "link": "https://archive.org/download/1_20210118/10.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T7 - Casa bonita",
+      "link": "https://archive.org/download/1_20210118/11.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T7 - Todo sobre los mormones",
+      "link": "https://archive.org/download/1_20210118/12.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T7 - Pírate",
+      "link": "https://archive.org/download/1_20210118/13.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T7 - Raisins",
+      "link": "https://archive.org/download/1_20210118/14.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T7 - Es navidad en Canadá",
+      "link": "https://archive.org/download/1_20210118/15.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },  {
+      "name": "T8 - Buenos momentos con armas",
+      "link": "https://archive.org/download/1_20210118_202101/1.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T8 - AWESOM-O",
+      "link": "https://archive.org/download/1_20210118_202101/2.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T8 - Contra los esteroides",
+      "link": "https://archive.org/download/1_20210118_202101/3.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T8 - La pasión del judío",
+      "link": "https://archive.org/download/1_20210118_202101/4.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T8 - Te la han metido doblada",
+      "link": "https://archive.org/download/1_20210118_202101/5.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T8 - Espaldas pringosas",
+      "link": "https://archive.org/download/1_20210118_202101/6.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T8 - Los Jefferson",
+      "link": "https://archive.org/download/1_20210118_202101/7.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T8 - Ducha vaginal y Zurullo",
+      "link": "https://archive.org/download/1_20210118_202101/8.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T8 - Algo Wall-Mart se aproxima",
+      "link": "https://archive.org/download/1_20210118_202101/9.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T8 - Preescolar",
+      "link": "https://archive.org/download/1_20210118_202101/10.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T8 - A la caza de las audiencias",
+      "link": "https://archive.org/download/1_20210118_202101/11.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T8 - Crea tus vídeos con puta estúpida y malcriada",
+      "link": "https://archive.org/download/1_20210118_202101/12.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T8 - El increíble don de Cartman",
+      "link": "https://archive.org/download/1_20210118_202101/13.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T8 - La navidad de los animalitos del bosque",
+      "link": "https://archive.org/download/1_20210118_202101/14.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },{
+      "name": "T9 - La nueva y molona vagina del señor Garrison",
+      "link": "https://archive.org/download/7_20210118/1.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T9 - Muere Hippy, muere",
+      "link": "https://archive.org/download/7_20210118/2.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T9 - Wing",
+      "link": "https://archive.org/download/7_20210118/3.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T9 - Mejores amigos para siempre",
+      "link": "https://archive.org/download/7_20210118/4.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T9 - El bando perdedor",
+      "link": "https://archive.org/download/7_20210118/5.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T9 - La muerte de Eric Cartman",
+      "link": "https://archive.org/download/7_20210118/6.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T9 - Día de erección",
+      "link": "https://archive.org/download/7_20210118/7.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T9 - Dos días antes del día de mañana",
+      "link": "https://archive.org/download/7_20210118/8.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T9 - Marjorine",
+      "link": "https://archive.org/download/7_20210118/9.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T9 - ¡Sigue a ese huevo!",
+      "link": "https://archive.org/download/7_20210118/10.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T9 - Niños pelirrojos",
+      "link": "https://archive.org/download/7_20210118/11.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T9 - Atrapado en el armario",
+      "link": "https://archive.org/download/7_20210118/12.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T9 - Liberen a Willzyx",
+      "link": "https://archive.org/download/7_20210118/13.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T9 - Bloody Mary",
+      "link": "https://archive.org/download/7_20210118/14.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },{
+    "name": "T10 - El Regreso del Chef",
+    "link": "https://archive.org/download/3_20210118/1.mpeg4",
+    "size": 5000,
+    "poster": ""
+  },
+  {
+    "name": "T10 - Alerta Smug",
+    "link": "https://archive.org/download/3_20210118/2.mpeg4",
+    "size": 5000,
+    "poster": ""
+  },
+  {
+    "name": "T10 - La Guerra de los Cartoons (Parte 1)",
+    "link": "https://archive.org/download/3_20210118/3.mpeg4",
+    "size": 5000,
+    "poster": ""
+  },
+  {
+    "name": "T10 - La Guerra de los Cartoons (Parte 2)",
+    "link": "https://archive.org/download/3_20210118/4.mpeg4",
+    "size": 5000,
+    "poster": ""
+  },
+  {
+    "name": "T10 - Un Millón de Fibritas",
+    "link": "https://archive.org/download/3_20210118/5.mpeg4",
+    "size": 5000,
+    "poster": ""
+  },
+  {
+    "name": "T10 - El HombreOsoCerdo",
+    "link": "https://archive.org/download/3_20210118/6.mpeg4",
+    "size": 5000,
+    "poster": ""
+  },
+  {
+    "name": "T10 - Psst",
+    "link": "https://archive.org/download/3_20210118/7.mpeg4",
+    "size": 5000,
+    "poster": ""
+  },
+  {
+    "name": "T10 - Haz El Amor, No El Warcraft",
+    "link": "https://archive.org/download/3_20210118/8.mpeg4",
+    "size": 5000,
+    "poster": ""
+  },
+  {
+    "name": "T10 - El Misterio Del Aparato Urinario",
+    "link": "https://archive.org/download/3_20210118/9.mpeg4",
+    "size": 5000,
+    "poster": ""
+  },
+  {
+    "name": "T10 - La Señorita Profesora Hace El Amor Con Un Alumno",
+    "link": "https://archive.org/download/3_20210118/10.mpeg4",
+    "size": 5000,
+    "poster": ""
+  },
+  {
+    "name": "T10 - El Infierno en la tierra 2006",
+    "link": "https://archive.org/download/3_20210118/11.mpeg4",
+    "size": 5000,
+    "poster": ""
+  },
+  {
+    "name": "T10 - Vamos Dios, Vamos (Parte 1)",
+    "link": "https://archive.org/download/3_20210118/12.mpeg4",
+    "size": 5000,
+    "poster": ""
+  },
+  {
+   
+"name": "T10 - Vamos Dios, Vamos (Parte 2)",
+"link":"https://archive.org/download/3_20210118/13.mpeg4",
+"size" :5000,
+"poster":""
+},
+{
+"name": "T10 - El Premio de Stanley",
+"link":"https://archive.org/download/3_20210118/14.mpeg4",
+"size" :5000,
+"poster":""
+},{
+    "name": "T11 - Con disculpas a Jesse Jackson",
+    "link": "https://archive.org/download/1_20210118_20210118_0329/1.mpeg4",
+    "size": 5000,
+    "poster": ""
+  },
+  {
+    "name": "T11 - Chúpate esa, Cartman",
+    "link": "https://archive.org/download/1_20210118_20210118_0329/2.mpeg4",
+    "size": 5000,
+    "poster": ""
+  },
+  {
+    "name": "T11 - Piojoaventuras",
+    "link": "https://archive.org/download/1_20210118_20210118_0329/3.mpeg4",
+    "size": 5000,
+    "poster": ""
+  },
+  {
+    "name": "T11 - La Bombagina",
+    "link": "https://archive.org/download/1_20210118_20210118_0329/4.mpeg4",
+    "size": 5000,
+    "poster": ""
+  },
+  {
+    "name": "T11 - El Fantástico Especial de Pascua",
+    "link": "https://archive.org/download/1_20210118_20210118_0329/5.mpeg4",
+    "size": 5000,
+    "poster": ""
+  },
+  {
+    "name": "T11 - D-Yikes",
+    "link": "https://archive.org/download/1_20210118_20210118_0329/6.mpeg4",
+    "size": 5000,
+    "poster": ""
+  },
+  {
+    "name": "T11 - La Noche de los Sin-Techo Vivientes",
+    "link": "https://archive.org/download/1_20210118_20210118_0329/7.mpeg4",
+    "size": 5000,
+    "poster": ""
+  },
+  {
+    "name": "T11 - Le Petit Tourette",
+    "link": "https://archive.org/download/1_20210118_20210118_0329/8.mpeg4",
+    "size": 5000,
+    "poster": ""
+  },
+  {
+    "name": "T11 - Más Mierda",
+    "link": "https://archive.org/download/1_20210118_20210118_0329/9.mpeg4",
+    "size": 5000,
+    "poster": ""
+  },
+  {
+    "name": "T11 - Imaginacionlandia",
+    "link": "https://archive.org/download/1_20210118_20210118_0329/10.mpeg4",
+    "size": 5000,
+    "poster": ""
+  },
+  {
+   
+"name": "T11 - Imaginacionlandia II",
+"link":"https://archive.org/download/1_20210118_20210118_0329/11.mpeg4",
+"size" :5000,
+"poster":""
+},
+{
+"name": "T11 - Imaginacionlandia III",
+"link":"https://archive.org/download/1_20210118_20210118_0329/12.mpeg4",
+"size" :5000,
+"poster":""
+},
+{
+"name": "T11 - Guitar Raro",
+"link":"https://archive.org/download/1_20210118_20210118_0329/13.mpeg4",
+"size" :5000,
+"poster":""
+},
+{
+"name": "T11 - La Lista",
+"link":"https://archive.org/download/1_20210118_20210118_0329/14.mpeg4",
+"size" :5000,
+"poster":""
+},{
+      "name": "T12 - Problema de amígdalas",
+      "link": "https://archive.org/download/7_20210118_202101/1.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T12 - El Nuevo Look de Britney",
+      "link": "https://archive.org/download/7_20210118_202101/2.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T12 - La Mayor Pechonalidad",
+      "link": "https://archive.org/download/7_20210118_202101/3.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T12 - ¡Canadá en huelga!",
+      "link": "https://archive.org/download/7_20210118_202101/4.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T12 - ¡Puaj, un pene!",
+      "link": "https://archive.org/download/7_20210118_202101/5.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T12 - Sobre Cargado",
+      "link": "https://archive.org/download/7_20210118_202101/6.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T12 - Súper Diversión",
+      "link": "https://archive.org/download/7_20210118_202101/7.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T12 - El Problema Chino",
+      "link": "https://archive.org/download/7_20210118_202101/8.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T12 - El Mejor Show sobre Cáncer de Mama",
+      "link": "https://archive.org/download/7_20210118_202101/9.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T12 - Pandemia",
+      "link": "https://archive.org/download/7_20210118_202101/10.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T12 - Pandemia 2: el Sobresalto",
+      "link": "https://archive.org/download/7_20210118_202101/11.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T12 - Sobre lo de anoche",
+      "link": "https://archive.org/download/7_20210118_202101/12.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T12 - Musical de Primaria",
+      "link": "https://archive.org/download/7_20210118_202101/13.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T12 - No Puede Ser Castigado",
+      "link": "https://archive.org/download/7_20210118_202101/14.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },{
+      "name": "T13 - El anillo de pureza",
+      "link": "https://archive.org/download/5_20210118_20210118/1.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T13 - El Mapache",
+      "link": "https://archive.org/download/5_20210118_20210118/2.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T13 - Villa Margarita",
+      "link": "https://archive.org/download/5_20210118_20210118/3.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T13 - Come, reza y tírate Vagipedos",
+      "link": "https://archive.org/download/5_20210118_20210118/4.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T13 - Varitas de pescado",
+      "link": "https://archive.org/download/5_20210118_20210118/5.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T13 - Carrera de autos de madera",
+      "link": "https://archive.org/download/5_20210118_20210118/6.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T13 - Barbagorda",
+      "link": "https://archive.org/download/5_20210118_20210118/7.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T13 - Celebridades muertas",
+      "link": "https://archive.org/download/5_20210118_20210118/8.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T13 - La perra mayor de Butters",
+      "link": "https://archive.org/download/5_20210118_20210118/9.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T13 - W.T.F.",
+      "link": "https://archive.org/download/5_20210118_20210118/10.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T13 - ¡Jódete, ballena!",
+      "link": "https://archive.org/download/5_20210118_20210118/11.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T13 - La palabra con M",
+      "link": "https://archive.org/download/5_20210118_20210118/12.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T13 - Baila con los pitufos",
+      "link": "https://archive.org/download/5_20210118_20210118/13.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },
+    {
+      "name": "T13 - Pis",
+      "link": "https://archive.org/download/5_20210118_20210118/14.mpeg4",
+      "size": 5000,
+      "poster": ""
+    },{
+    "name": "T14 - Curación sexual",
+    "link": "https://archive.org/download/5_20210118_20210118_2309/1.mpeg4",
+    "size": 5000,
+    "poster": ""
+  },
+  {
+    "name": "T14 - La historia de escroto McBolas de Moco",
+    "link": "https://archive.org/download/5_20210118_20210118_2309/2.mpeg4",
+    "size": 5000,
+    "poster": ""
+  },
+  {
+    "name": "T14 - Pollo frito medicinal",
+    "link": "https://archive.org/download/5_20210118_20210118_2309/3.mpeg4",
+    "size": 5000,
+    "poster": ""
+  },
+  {
+    "name": "T14 - Tienes 0 amigos en Facebook",
+    "link": "https://archive.org/download/5_20210118_20210118_2309/4.mpeg4",
+    "size": 5000,
+    "poster": ""
+  },
+  {
+    "name": "T14 - 200",
+    "link": "https://archive.org/download/5_20210118_20210118_2309/5.mpeg4",
+    "size": 5000,
+    "poster": ""
+  },
+  {
+    "name": "T14 - 201",
+    "link": "https://archive.org/download/5_20210118_20210118_2309/6.mpeg4",
+    "size": 5000,
+    "poster": ""
+  },
+  {
+    "name": "T14 - Verano minusválido",
+    "link": "https://archive.org/download/5_20210118_20210118_2309/7.mpeg4",
+    "size": 5000,
+    "poster": ""
+  },
+  {
+    "name": "T14 - Pobre y estúpido",
+    "link": "https://archive.org/download/5_20210118_20210118_2309/8.mpeg4",
+    "size": 5000,
+    "poster": ""
+  },
+  {
+    "name": "T14 - Es cosa de Jersey",
+    "link": "https://archive.org/download/5_20210118_20210118_2309/9.mpeg4",
+    "size": 5000,
+    "poster": ""
+  },
+  {
+    "name": "T14 - El origen",
+    "link": "https://archive.org/download/5_20210118_20210118_2309/10.mpeg4",
+    "size": 5000,
+    "poster": ""
+  },
+  {
+    "name": "T14 - El mapache vs. mapache y amigos parte 1",
+    "link": "https://archive.org/download/5_20210118_20210118_2309/11.mpeg4",
+    "size": 5000,
+    "poster": ""
+  },
+  {
+    "name": "T14 - El mapache vs. mapache y amigos parte 2",
+    "link": "https://archive.org/download/5_20210118_20210118_2309/12.mpeg4",
+    "size": 5000,
+    "poster": ""
+  },
+  {
+    "name": "T14 - El mapache vs. mapache y amigos parte 3",
+    "link": "https://archive.org/download/5_20210118_20210118_2309/13.mpeg4",
+    "size": 5000,
+    "poster": ""
+  },
+  {
+    "name": "T14 - Crème Fraiche",
+    "link": "https://archive.org/download/5_20210118_20210118_2309/14.mpeg4",
+    "size": 5000,
+    "poster": ""
+  },{
+    "name": "T15 - CiENPADHUMANO",
+    "link": "https://archive.org/download/3_20210118_20210118/1.mpeg4",
+    "size": 5000,
+    "poster": ""
+  },
+  {
+    "name": "T15 - Chistebot",
+    "link": "https://archive.org/download/3_20210118_20210118/2.mpeg4",
+    "size": 5000,
+    "poster": ""
+  },
+  {
+    "name": "T15 - Pudin real",
+    "link": "https://archive.org/download/3_20210118_20210118/3.mpeg4",
+    "size": 5000,
+    "poster": ""
+  },
+  {
+    "name": "T15 - T.A.P.",
+    "link": "https://archive.org/download/3_20210118_20210118/4.mpeg4",
+    "size": 5000,
+    "poster": ""
+  },
+  {
+    "name": "T15 - Agrupacion deportiva de los bebes del crack",
+    "link": "https://archive.org/download/3_20210118_20210118/5.mpeg4",
+    "size": 5000,
+    "poster": ""
+  },
+  {
+    "name": "T15 - Ciudad",
+    "link": "https://archive.org/download/3_20210118_20210118/6.mpeg4",
+    "size": 5000,
+    "poster": ""
+  },
+  {
+    "name": "T15 - Te estas haciendo mayor",
+    "link": "https://archive.org/download/3_20210118_20210118/7.mpeg4",
+    "size": 5000,
+    "poster": ""
+  },
+  {
+    "name": "T15 - Hamburguesas Ano",
+    "link": "https://archive.org/download/3_20210118_20210118/8.mpeg4",
+    "size": 5000,
+    "poster": ""
+  },
+  {
+    "name": "T15 - El último mohicano",
+    "link": "https://archive.org/download/3_20210118_20210118/9.mpeg4",
+    "size": 5000,
+    "poster": ""
+  },
+  {
+    "name": "T15 - Lenguado",
+    "link": "https://archive.org/download/3_20210118_20210118/10.mpeg4",
+    "size": 5000,
+    "poster": ""
+  },
+  {
+    "name": "T15 - Colegueo en Broadway",
+    "link": "https://archive.org/download/3_20210118_20210118/11.mpeg4",
+    "size": 5000,
+    "poster": ""
+  },
+  {
+    "name": "T15 - 1%",
+    "link": "https://archive.org/download/3_20210118_20210118/12.mpeg4",
+    "size": 5000,
+    "poster": ""
+  },
+  {
+    "name": "T15 - Accion de Gracias del canal Historia",
+    "link": "https://archive.org/download/3_20210118_20210118/13.mpeg4",
+    "size": 5000,
+    "poster": ""
+  },
+  {
+    "name": "T15 - El niño pobre",
+    "link": "https://archive.org/download/3_20210118_20210118/14.mpeg4",
+    "size": 5000,
+    "poster": ""
+  },{
+    "name": "T16 - Vaquera del revés",
+    "link": "https://archive.org/download/12_20210118_20210118_2322/1.mpeg4",
+    "size": 5000,
+    "poster": ""
+  },
+  {
+    "name": "T16 - Compramos oro",
+    "link": "https://archive.org/download/12_20210118_20210118_2322/2.mpeg4",
+    "size": 5000,
+    "poster": ""
+  },
+  {
+    "name": "T16 - Faithileo",
+    "link": "https://archive.org/download/12_20210118_20210118_2322/3.mpeg4",
+    "size": 5000,
+    "poster": ""
+  },
+  {
+    "name": "T16 - Judacabra",
+    "link": "https://archive.org/download/12_20210118_20210118_2322/4.mpeg4",
+    "size": 5000,
+    "poster": ""
+  },
+  {
+    "name": "T16 - Mariposas",
+    "link": "https://archive.org/download/12_20210118_20210118_2322/5.mpeg4",
+    "size": 5000,
+    "poster": ""
+  },
+  {
+    "name": "T16 - Nunca debí ir a hacer tirolona",
+    "link": "https://archive.org/download/12_20210118_20210118_2322/6.mpeg4",
+    "size": 5000,
+    "poster": ""
+  },
+  {
+    "name": "T16 - Cartman encuentra el amor",
+    "link": "https://archive.org/download/12_20210118_20210118_2322/7.mpeg4",
+    "size": 5000,
+    "poster": ""
+  },
+  {
+    "name": "T16 - Sarcasmoball",
+    "link": "https://archive.org/download/12_20210118_20210118_2322/8.mpeg4",
+    "size": 5000,
+    "poster": ""
+  },
+  {
+    "name": "T16 - Subiendo el listón",
+    "link": "https://archive.org/download/12_20210118_20210118_2322/9.mpeg4",
+    "size": 5000,
+    "poster": ""
+  },
+  {
+    "name": "T16 - Inseguridad",
+    "link": "https://archive.org/download/12_20210118_20210118_2322/10.mpeg4",
+    "size": 5000,
+    "poster": ""
+  },
+  {
+    "name": "T16 - Volviendose Nativo",
+    "link": "https://archive.org/download/12_20210118_20210118_2322/11.mpeg4",
+    "size": 5000,
+    "poster": ""
+  },
+  {
+    "name": "T16 - Peso",
+    "link": "https://archive.org/download/12_20210118_20210118_2322/12.mpeg4",
+    "size": 5000,
+    "poster": ""
+  },
+  {
+    "name": "T16 - Una excausa para aplaudir",
+    "link": "https://archive.org/download/12_20210118_20210118_2322/13.mpeg4",
+    "size": 5000,
+    "poster": ""
+  },
+  {
+    "name": "T16 - ¡Obama gana!",
+    "link": "https://archive.org/download/12_20210118_20210118_2322/14.mpeg4",
+    "size": 5000,
+    "poster": ""
+  },{
+        "name": "T17 - Gobierno nuestro Señor",
+        "link": "https://archive.org/download/1_20210118_20210118_2331/1.mpeg4",
+        "size": 5000,
+        "poster": ""
+    },
+    {
+        "name": "T17 - Documental de homicidios porno",
+        "link": "https://archive.org/download/1_20210118_20210118_2331/2.mpeg4",
+        "size": 5000,
+        "poster": ""
+    },
+    {
+        "name": "T17 - Guerra mundial Zimmerman",
+        "link": "https://archive.org/download/1_20210118_20210118_2331/3.mpeg4",
+        "size": 5000,
+        "poster": ""
+    },
+    {
+        "name": "T17 - Niños góticos 3: El amanecer de los falsos",
+        "link": "https://archive.org/download/1_20210118_20210118_2331/4.mpeg4",
+        "size": 5000,
+        "poster": ""
+    },
+    {
+        "name": "T17 - IntelliLink",
+        "link": "https://archive.org/download/1_20210118_20210118_2331/5.mpeg4",
+        "size": 5000,
+        "poster": ""
+    },
+    {
+        "name": "T17 - Vaca pelirroja",
+        "link": "https://archive.org/download/1_20210118_20210118_2331/6.mpeg4",
+        "size": 5000,
+        "poster": ""
+    },
+    {
+        "name": "T17 - Viernes negro",
+        "link": "https://archive.org/download/1_20210118_20210118_2331/7.mpeg4",
+        "size": 5000,
+        "poster": ""
+    },
+    {
+        "name": "T17 - Cancún",
+        "link": "https://archive.org/download/1_20210118_20210118_2331/8.mpeg4",
+        "size": 5000,
+        "poster": ""
+    },
+    {
+        "name": "T17 - Tetas y dragones",
+        "link": "https://archive.org/download/1_20210118_20210118_2331/9.mpeg4",
+        "size": 5000,
+        "poster": ""
+    },
+    {
+        "name": "T17 - El Hobbit",
+        "link": "https://archive.org/download/1_20210118_20210118_2331/10.mpeg4",
+        "size": 5000,
+        "poster": ""
+    },{
+        "name": "T18 - 1 Jódete",
+        "link": "https://archive.org/download/10_20210118_20210118_2346/1.mpeg4",
+        "size": 5000,
+        "poster": ""
+    },
+    {
+        "name": "T18 - 2 Ébola sin gluten",
+        "link": "https://archive.org/download/10_20210118_20210118_2346/2.mpeg4",
+        "size": 5000,
+        "poster": ""
+    },
+    {
+        "name": "T18 - 3 La mariquita",
+        "link": "https://archive.org/download/10_20210118_20210118_2346/3.mpeg4",
+        "size": 5000,
+        "poster": ""
+    },
+    {
+        "name": "T18 - 4 Handicar",
+        "link": "https://archive.org/download/10_20210118_20210118_2346/4.mpeg4",
+        "size": 5000,
+        "poster": ""
+    },
+    {
+        "name": "T18 - 5 La cabellera mágica",
+        "link": "https://archive.org/download/10_20210118_20210118_2346/5.mpeg4",
+        "size": 5000,
+        "poster": ""
+    },
+    {
+        "name": "T18 - 6 Freemium no es gratis",
+        "link": "https://archive.org/download/10_20210118_20210118_2346/6.mpeg4",
+        "size": 5000,
+        "poster": ""
+    },
+    {
+        "name": "T18 - 7 Fundamentada en Vindaloop",
+        "link": "https://archive.org/download/10_20210118_20210118_2346/7.mpeg4",
+        "size": 5000,
+        "poster": ""
+    },
+    {
+        "name": "T18 - 8 La Polla Magica",
+        "link": "https://archive.org/download/10_20210118_20210118_2346/8.mpeg4",
+        "size": 5000,
+        "poster": ""
+    },
+    {
+        "name": "T18 - 9 #REFRITO",
+        "link": "https://archive.org/download/10_20210118_20210118_2346/9.mpeg4",
+        "size": 5000,
+        "poster": ""
+    },
+    {
+        "name": "T18 - 10 Hologramas felices",
+        "link": "https://archive.org/download/10_20210118_20210118_2346/10.mpeg4",
+        "size": 5000,
+        "poster": ""
+    },{
+        "name": "T19 - 1 Impresionante y valiente",
+        "link": "https://archive.org/download/5_20210118_20210118_2353/1.mpeg4",
+        "size": 5000,
+        "poster": ""
+    },
+    {
+        "name": "T19 - 2 ¿Dónde está mi país?",
+        "link": "https://archive.org/download/5_20210118_20210118_2353/2.mpeg4",
+        "size": 5000,
+        "poster": ""
+    },
+    {
+        "name": "T19 - 3 La ciudad que es parte del pueblo",
+        "link": "https://archive.org/download/5_20210118_20210118_2353/3.mpeg4",
+        "size": 5000,
+        "poster": ""
+    },
+    {
+        "name": "T19 - 4 No eres Yelp",
+        "link": "https://archive.org/download/5_20210118_20210118_2353/4.mpeg4",
+        "size": 5000,
+        "poster": ""
+    },
+    {
+        "name": "T19 - 5 Espacio seguro",
+        "link": "https://archive.org/download/5_20210118_20210118_2353/5.mpeg4",
+        "size": 5000,
+        "poster": ""
+    },
+    {
+        "name": "T19 - 6 Tweek y Craig",
+        "link": "https://archive.org/download/5_20210118_20210118_2353/6.mpeg4",
+        "size": 5000,
+        "poster": ""
+    },
+    {
+        "name": "T19 - 7 Ninjas perversos",
+        "link": "https://archive.org/download/5_20210118_20210118_2353/7.mpeg4",
+        "size": 5000,
+        "poster": ""
+    },
+    {
+        "name": "T19 - 8 Contenido patrocinado",
+        "link": "https://archive.org/download/5_20210118_20210118_2353/8.mpeg4",
+        "size": 5000,
+        "poster": ""
+    },
+    {
+        "name": "T19 - 9 Verdad y propaganda",
+        "link": "https://archive.org/download/5_20210118_20210118_2353/9.mpeg4",
+        "size": 5000,
+        "poster": ""
+    },
+    {
+        "name": "T19 - 10 La justicia final del director PC",
+        "link": "https://archive.org/download/5_20210118_20210118_2353/10.mpeg4",
+        "size": 5000,
+        "poster": ""
+    },{
+        "name": "T20 - 1 Glorias pasas",
+        "link": "https://archive.org/download/3_20210119/1.mpeg4",
+        "size": 5000,
+        "poster": ""
+    },
+    {
+        "name": "T20 - 2 Cazafurcias",
+        "link": "https://archive.org/download/3_20210119/2.mpeg4",
+        "size": 5000,
+        "poster": ""
+    },
+    {
+        "name": "T20 - 3 Los malditos",
+        "link": "https://archive.org/download/3_20210119/3.mpeg4",
+        "size": 5000,
+        "poster": ""
+    },
+    {
+        "name": "T20 - 4 Pitos fuera",
+        "link": "https://archive.org/download/3_20210119/4.mpeg4",
+        "size": 5000,
+        "poster": ""
+    },
+    {
+        "name": "T20 - 5 Billy y un danés",
+        "link": "https://archive.org/download/3_20210119/5.mpeg4",
+        "size": 5000,
+        "poster": ""
+    },
+    {
+        "name": "T20 - 6 Fort Collins",
+        "link": "https://archive.org/download/3_20210119/6.mpeg4",
+        "size": 5000,
+        "poster": ""
+    },
+    {
+        "name": "T20 - 7 Oh Dios",
+        "link": "https://archive.org/download/3_20210119/7.mpeg4",
+        "size": 5000,
+        "poster": ""
+    },
+    {
+        "name": "T20 - 8 Solo miembros",
+        "link": "https://archive.org/download/3_20210119/8.mpeg4",
+        "size": 5000,
+        "poster": ""
+    },
+    {
+        "name": "T20 - 9 No es divertido",
+        "link": "https://archive.org/download/3_20210119/9.mpeg4",
+        "size": 5000,
+        "poster": ""
+    },
+    {
+        "name": "T20 - 10 El fin de la serialización tal como la conocemos",
+        "link": "https://archive.org/download/3_20210119/10.mpeg4",
+        "size": 5000,
+        "poster": ""
+    },{
+        "name": "T21 - 1 Blancos que renuevan casas",
+        "link": "https://archive.org/download/1_20210119/1.mpeg4",
+        "size": 5000,
+        "poster": ""
+    },
+    {
+        "name": "T21 - 2 Guarda el móvil",
+        "link": "https://archive.org/download/1_20210119/2.mpeg4",
+        "size": 5000,
+        "poster": ""
+    },
+    {
+        "name": "T21 - 3 Vacaciones especiales",
+        "link": "https://archive.org/download/1_20210119/3.mpeg4",
+        "size": 5000,
+        "poster": ""
+    },
+    {
+        "name": "T21 - 4 La precuela de la saga",
+        "link": "https://archive.org/download/1_20210119/4.mpeg4",
+        "size": 5000,
+        "poster": ""
+    },
+    {
+        "name": "T21 - 5 Hummels y heroína",
+        "link": "https://archive.org/download/1_20210119/5.mpeg4",
+        "size": 5000,
+        "poster": ""
+    },
+    {
+        "name": "T21 - 6 Hijos de bruja",
+        "link": "https://archive.org/download/1_20210119/6.mpeg4",
+        "size": 5000,
+        "poster": ""
+    },
+    {
+        "name": "T21 - 7 Doble fracaso",
+        "link": "https://archive.org/download/1_20210119/7.mpeg4",
+        "size": 5000,
+        "poster": ""
+    },
+    {
+        "name": "T21 - 8 Osos de agua",
+        "link": "https://archive.org/download/1_20210119/8.mpeg4",
+        "size": 5000,
+        "poster": ""
+    },
+    {
+        "name": "T21 - 9 Dirección super dura",
+        "link": "https://archive.org/download/1_20210119/9.mpeg4",
+        "size": 5000,
+        "poster": ""
+    },
+    {
+        "name": "T21 - 10 Tomate explosivo",
+        "link": "https://archive.org/download/1_20210119/10.mpeg4",
+        "size": 5000,
+        "poster": ""
+    }, {
+        "name": "T22 - 1 Niños muertos",
+        "link": "https://archive.org/download/5_20210119/1.mpeg4",
+        "size": 5000,
+        "poster": ""
+    },
+    {
+        "name": "T22 - 2 El niño y el cura",
+        "link": "https://archive.org/download/5_20210119/2.mpeg4",
+        "size": 5000,
+        "poster": ""
+    },
+    {
+        "name": "T22 - 3 Un mojón en apuros",
+        "link": "https://archive.org/download/5_20210119/3.mpeg4",
+        "size": 5000,
+        "poster": ""
+    },
+    {
+        "name": "T22 - 4 Granjas de Marihuana",
+        "link": "https://archive.org/download/5_20210119/4.mpeg4",
+        "size": 5000,
+        "poster": ""
+    },
+    {
+        "name": "T22 - 5 Los patinetes",
+        "link": "https://archive.org/download/5_20210119/5.mpeg4",
+        "size": 5000,
+        "poster": ""
+    },
+    {
+        "name": "T22 - 6 Hora de ponerse series",
+        "link": "https://archive.org/download/5_20210119/6.mpeg4",
+        "size": 5000,
+        "poster": ""
+    },
+    {
+        "name": "T22 - 7 Por no ponernos series",
+        "link": "https://archive.org/download/5_20210119/7.mpeg4",
+        "size": 5000,
+        "poster": ""
+    },
+    {
+        "name": "T22 - 8 Buda Box",
+        "link": "https://archive.org/download/5_20210119/8.mpeg4",
+        "size": 5000,
+        "poster": ""
+    },
+    {
+        "name": "T22 - 9 No cumplido",
+        "link": "https://archive.org/download/5_20210119/9.mpeg4",
+        "size": 5000,
+        "poster": ""
+    },
+    {
+        "name": "T22 - 10 Desfile de bicicletas",
+        "link": "https://archive.org/download/5_20210119/10.mpeg4",
+        "size": 5000,
+        "poster": ""
+    },{
+        "name": "T23 - 1 Guasón mexicano",
+        "link": "https://archive.org/download/2_20210119/1.mpeg4",
+        "size": 5000,
+        "poster": ""
+    },
+    {
+        "name": "T23 - 2 Banda en China",
+        "link": "https://archive.org/download/2_20210119/2.mpeg4",
+        "size": 5000,
+        "poster": ""
+    },
+    {
+        "name": "T23 - 3 ¡Vacunación",
+        "link": "https://archive.org/download/2_20210119/3.mpeg4",
+        "size": 5000,
+        "poster": ""
+    },
+    {
+        "name": "T23 - 4 Deja que coman menjunje",
+        "link": "https://archive.org/download/2_20210119/4.mpeg4",
+        "size": 5000,
+        "poster": ""
+    },
+    {
+        "name": "T23 - 5 Especial de Halloween de Granjas Tegridad",
+        "link": "https://archive.org/download/2_20210119/5.mpeg4",
+        "size": 5000,
+        "poster": ""
+    },
+    {
+        "name": "T23 - 6 Final de temporada",
+        "link": "https://archive.org/download/2_20210119/6.mpeg4",
+        "size": 5000,
+        "poster": ""
+    },
+    {
+        "name": "T23 - 7 Chicas de mesa",
+        "link": "https://archive.org/download/2_20210119/7.mpeg4",
+        "size": 5000,
+        "poster": ""
+    },
+    {
+        "name": "T23 - 8 Cacos de cacas",
+        "link": "https://archive.org/download/2_20210119/8.mpeg4",
+        "size": 5000,
+        "poster": ""
+    },
+    {
+        "name": "T23 - 9 Turd Burglars",
+        "link": "https://archive.org/download/2_20210119/9.mpeg4",
+        "size": 5000,
+        "poster": ""
+    },
+    {
+        "name": "T23 - 10 Christmas Snow",
+        "link": "https://archive.org/download/2_20210119/10.mpeg4",
+        "size": 5000,
+        "poster": ""
+    },{
+        "name": "T24 - 1 Especial pandémico",
+        "link": "https://archive.org/download/3_20230926/1.mpeg4",
+        "size": 5000,
+        "poster": ""
+    },
+    {
+        "name": "T24 - 2 Especial de vacunación South Park",
+        "link": "https://archive.org/download/3_20230926/2.mpeg4",
+        "size": 5000,
+        "poster": ""
+    },
+    {
+        "name": "T24 - 3 Post Covid",
+        "link": "https://archive.org/download/3_20230926/3.mpeg4",
+        "size": 5000,
+        "poster": ""
+    },
+    {
+        "name": "T24 - 4 Post Covid El regreso del covid",
+        "link": "https://archive.org/download/3_20230926/4.mpeg4",
+        "size": 5000,
+        "poster": ""
+    },{
+        "name": "T25 - 1 Día de pijamas",
+        "link": "https://archive.org/download/8_20230926_202309/1.mpeg4",
+        "size": 5000,
+        "poster": ""
+    },
+    {
+        "name": "T25 - 2 El regreso de Kenny",
+        "link": "https://archive.org/download/8_20230926_202309/2.mpeg4",
+        "size": 5000,
+        "poster": ""
+    },
+    {
+        "name": "T25 - 3 La granja de Butters",
+        "link": "https://archive.org/download/8_20230926_202309/3.mpeg4",
+        "size": 5000,
+        "poster": ""
+    },
+    {
+        "name": "T25 - 4 El club de los perdedores",
+        "link": "https://archive.org/download/8_20230926_202309/4.mpeg4",
+        "size": 5000,
+        "poster": ""
+    },
+    {
+        "name": "T25 - 5 Ayuda, mi adolescente me odia",
+        "link": "https://archive.org/download/8_20230926_202309/5.mpeg4",
+        "size": 5000,
+        "poster": ""
+    },
+    {
+        "name": "T25 - 6 El misterio del Sr. Hankey",
+        "link": "https://archive.org/download/8_20230926_202309/6.mpeg4",
+        "size": 5000,
+        "poster": ""
+    },
+    {
+        "name": "T25 - 7 La venganza de Scott Tenorman",
+        "link": "https://archive.org/download/8_20230926_202309/7.mpeg4",
+        "size": 5000,
+        "poster": ""
+    },
+    {
+        "name": "T25 - 8 El festival de la cosecha",
+        "link": "https://archive.org/download/8_20230926_202309/8.mpeg4",
+        "size": 5000,
+        "poster": ""
+    },{
+        "name": "T26 - 1 Cupido Ye",
+        "link": "https://archive.org/download/8_20230926_202309/9.mpeg4",
+        "size": 5000,
+        "poster": ""
+    },
+    {
+        "name": "T26 - 2 Tour Mundial de la Privacidad",
+        "link": "https://archive.org/download/8_20230926_202309/10.mpeg4",
+        "size": 5000,
+        "poster": ""
+    },
+    {
+        "name": "T26 - 3 Inodoros japoneses",
+        "link": "https://archive.org/download/8_20230926_202309/11.mpeg4",
+        "size": 5000,
+        "poster": ""
+    },
+    {
+        "name": "T26 - 4 Aprendizaje profundo",
+        "link": "https://archive.org/download/8_20230926_202309/12.mpeg4",
+        "size": 5000,
+        "poster": ""
+    },
+    {
+        "name": "T26 - 5 DikinBaus Hot Dogs",
+        "link": "https://archive.org/download/8_20230926_202309/13.mpeg4",
+        "size": 5000,
+        "poster": ""
+    },
+    {
+        "name": "T26 - 6 Vacaciones de primavera",
+        "link": "https://archive.org/download/8_20230926_202309/14.mpeg4",
+        "size": 5000,
+        "poster": ""
+    },
+    
+    
+    
+    
+    
+            
+        ];
+          
+          
+</script>
+
+ <script src="https://meibispro.github.io/pitu/webig/codofplay/arplaycod.js"></script>
+
+
+
+</body>
+</html>
+</body>
+</html>
+
+
+
+ <script src="https://meibispro.github.io/pitu/webig/codofplay/play20scry.js"></script>
+
+
+
+
+<style>
+  .triangle-symbol {
+    font-size: 24px; /* Cambia el tamaño del texto a 24 píxeles */
+    color: red; /* Cambia el color del texto a rojo */
+  }
+</style>
+
+<script>
+  
+    
+    //play video restores the video from the last point
+$("video").on("play", function(event) {
+    // Restaurar el color de fondo y el símbolo de los enlaces anteriores
+    $("#bvideo_playlist a").css("background-color", "initial");
+    $("#bvideo_playlist a .triangle-symbol").remove();
+
+    $storedtime = localStorage.getItem('bvideo-'+btoa(this.src));
+    // Get the time from localStorage and play if not at the end.
+    if ($storedtime < this.duration) 
+        this.currentTime = $storedtime;
+
+    this.play();
+
+    // Resaltar el nombre del video en curso y agregar el símbolo triangular
+    var currentVideoLink = $('a[data-bvideo_id~="'+$(this).attr("data-bvideo_id")+'"]');
+    currentVideoLink.css("background-color", "yellow");
+    currentVideoLink.prepend('<span class="triangle-symbol">&#9654;</span>');
+});
+</script>
+
+
+<script>
+
+//ELIMINA EL LINK AL PONER CLIK DERECHO
+  // Obtén una referencia al elemento con la clase "art-info-content" y atributo data-video="src"
+var srcElement = document.querySelector('.art-info-content[data-video="src"]');
+
+// Verifica si se encontró el elemento antes de intentar ocultarlo
+if (srcElement) {
+  // Oculta el elemento cambiando su estilo
+  srcElement.style.display = 'none';
+}
+
+</script>
