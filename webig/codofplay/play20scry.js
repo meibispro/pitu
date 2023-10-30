@@ -1,5 +1,4 @@
-  
-  /**
+/**
  * Better Video and playlist jQuery plugin
  * Version: 2.0
  */
@@ -20,21 +19,6 @@ jQuery(document).ready(function( $ ) {
         );
 
     });
-  $(document).ready(function() {
-  var video = $("video")[0];
-
-  // Inicia un temporizador para ejecutar la función cada 5 segundos
-  var timer = setInterval(function() {
-    // Aquí guardamos el tiempo actual en el almacenamiento local cada 5 segundos
-    localStorage.setItem('bvideo-' + btoa(video.src), video.currentTime);
-  }, 100); // 5000 milisegundos (5 segundos)
-
-  // Agrega un controlador de eventos para detener el temporizador si el video se pausa manualmente
-  $(video).on("pause", function(event) {
-    clearInterval(timer); // Detén el temporizador
-  });
-});
-
 
     //if you close the window and video playing store the current time
     $(window).on("unload", function(e) {
