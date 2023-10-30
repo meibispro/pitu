@@ -81,7 +81,7 @@
               icons: {
         loading: '<img src="https://www.artplayer.org/assets/img/ploading.gif">',
         state: '<img width="150" heigth="150" src="https://www.artplayer.org/assets/img/state.svg">',
-        indicator: '<img width="16" heigth="16" src="https://www.artplayer.org/assets/img/indicator.svg">',
+        indicator: '<img width="16" heigth="16" src="https://assets.stickpng.com/images/580b57fcd9996e24bc43c3de.png">',
     },
               hotkey: true,
               //screenshot: true,
