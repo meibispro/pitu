@@ -79,9 +79,9 @@
         },
     ],
               icons: {
-        loading: '<img src="https://www.artplayer.org/assets/img/ploading.gif">',
+        loading: '<img src="https://img1.picmix.com/output/stamp/normal/7/5/6/0/2080657_ed868.gif">',
         state: '<img width="150" heigth="150" src="https://www.artplayer.org/assets/img/state.svg">',
-        indicator: '<img width="20" heigth="20" src="https://assets.stickpng.com/images/580b57fcd9996e24bc43c3de.png">',
+        indicator: '<img width="25" heigth="25" src="https://assets.stickpng.com/images/580b57fcd9996e24bc43c3de.png">',
     },
               hotkey: true,
               //screenshot: true,
