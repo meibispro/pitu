@@ -5,20 +5,33 @@
 jQuery(document).ready(function( $ ) {
     
     //when we pause we store the current time
-    $("video").on("pause", function(event) {
-        // Save into local storage,if you change the browser will not work
-        localStorage.setItem('bvideo-'+btoa(this.src), this.currentTime);
+    function storeVideoTime() {
+  // Almacenar el tiempo actual del video en el almacenamiento local
+  localStorage.setItem('bvideo-' + btoa(this.src), this.currentTime);
 
-        //ajax call
-        $.post(my_ajax_obj.ajax_url, {         //POST request
-            _ajax_nonce: my_ajax_obj.nonce,     //nonce
-            action: "bbpl_store_video_time",            //action
-            time: this.currentTime,                  //time
-            video: this.src,                    //video url
-            }
-        );
+  // Realizar una llamada AJAX
+  $.post(my_ajax_obj.ajax_url, {
+    _ajax_nonce: my_ajax_obj.nonce,
+    action: "bbpl_store_video_time",
+    time: this.currentTime,
+    video: this.src
+  });
+}
 
-    });
+// Agregar un controlador de eventos para el evento 'pause'
+$("video").on("pause", function(event) {
+  storeVideoTime.call(this); // Llamar a la función storeVideoTime
+});
+
+// Establecer un intervalo que ejecute storeVideoTime cada 5 segundos
+setInterval(function() {
+  $("video").each(function() {
+    if (!this.paused) {
+      storeVideoTime.call(this);
+    }
+  });
+}, 5000); // 5000 milisegundos (5 segundos)
+
 
     //if you close the window and video playing store the current time
     $(window).on("unload", function(e) {
