@@ -314,3 +314,23 @@ function fileSize(a,b,c,d,e)
 {
     return (b=Math,c=b.log,d=1e3,e=c(a)/c(d)|0,a/b.pow(d,e)).toFixed(e?2:0)+' '+(e?'kMGTPEZY'[--e]+'B':'Bytes')
 }
+
+
+    //play video restores the video from the last point
+$("video").on("play", function(event) {
+    // Restaurar el color de fondo y el símbolo de los enlaces anteriores
+    $("#bvideo_playlist a").css("background-color", "initial");
+    $("#bvideo_playlist a .triangle-symbol").remove();
+
+    $storedtime = localStorage.getItem('bvideo-'+btoa(this.src));
+    // Get the time from localStorage and play if not at the end.
+    if ($storedtime < this.duration) 
+        this.currentTime = $storedtime;
+
+    this.play();
+
+    // Resaltar el nombre del video en curso y agregar el símbolo triangular
+    var currentVideoLink = $('a[data-bvideo_id~="'+$(this).attr("data-bvideo_id")+'"]');
+    currentVideoLink.css("background-color", "yellow");
+    currentVideoLink.prepend('<span class="triangle-symbol">&#9654;</span>');
+});
