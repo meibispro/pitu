@@ -1,15 +1,3 @@
-<!--foto portada abierto-->
-
-<div hidden>
-
- <div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgeTKB5enFMJRyZ2OmQF-QAid4cx9Lpr-71xFYcYw9J-hIi2jMSndBpJICD636Zcw_0c5eocfId4crdM9I-1YPiU-2MZ2r9bSmZ1g7o4CJ8fLPvaQFg4Bzn-rRI_flfkPd67o-tHhA1e8XoQ36pqnoUEXKUYm_ktTQrFKYEvWsAvLXusxiCPIapDgZV5hQ/s1024/south-park.jpg" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" height="320" data-original-height="1024" data-original-width="718" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgeTKB5enFMJRyZ2OmQF-QAid4cx9Lpr-71xFYcYw9J-hIi2jMSndBpJICD636Zcw_0c5eocfId4crdM9I-1YPiU-2MZ2r9bSmZ1g7o4CJ8fLPvaQFg4Bzn-rRI_flfkPd67o-tHhA1e8XoQ36pqnoUEXKUYm_ktTQrFKYEvWsAvLXusxiCPIapDgZV5hQ/s320/south-park.jpg"/></a></div>
-  
-  </div>
-  <!--foto portada abierto-->
-
-
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -2182,81 +2170,6 @@
 </script>
 
 
-
-
-
-</body>
-</html>
-</body>
-</html>
-
-
-
- <script src="https://meibispro.github.io/pitu/webig/codofplay/play20scry.js"></script>
-
-<script>
-
-
-</script>
-
-
-
-<style>
-  .triangle-symbol {
-    font-size: 24px; /* Cambia el tamaño del texto a 24 píxeles */
-    color: red; /* Cambia el color del texto a rojo */
-  }
-</style>
-
-<script>
-  
-    
-    //play video restores the video from the last point
-$("video").on("play", function(event) {
-    // Restaurar el color de fondo y el símbolo de los enlaces anteriores
-    $("#bvideo_playlist a").css("background-color", "initial");
-    $("#bvideo_playlist a .triangle-symbol").remove();
-
-    $storedtime = localStorage.getItem('bvideo-'+btoa(this.src));
-    // Get the time from localStorage and play if not at the end.
-    if ($storedtime < this.duration) 
-        this.currentTime = $storedtime;
-
-    this.play();
-
-    // Resaltar el nombre del video en curso y agregar el símbolo triangular
-    var currentVideoLink = $('a[data-bvideo_id~="'+$(this).attr("data-bvideo_id")+'"]');
-    currentVideoLink.css("background-color", "yellow");
-    currentVideoLink.prepend('<span class="triangle-symbol">&#9654;</span>');
-});
-</script>
-
-
-<script>
-
-//ELIMINA EL LINK AL PONER CLIK DERECHO
-  // Obtén una referencia al elemento con la clase "art-info-content" y atributo data-video="src"
-var srcElement = document.querySelector('.art-info-content[data-video="src"]');
-
-// Verifica si se encontró el elemento antes de intentar ocultarlo
-if (srcElement) {
-  // Oculta el elemento cambiando su estilo
-  srcElement.style.display = 'none';
-}
-
-</script>
-
-
-
-
-
-
-
-
-
-
-
-
 <script>
   var art = new Artplayer({
     container: '#artplayer-app',
@@ -2350,4 +2263,75 @@ if (srcElement) {
     ],
 });
 </script>
+
+
+
+</body>
+</html>
+</body>
+</html>
+
+
+
+ <script src="https://meibispro.github.io/pitu/webig/codofplay/play20scry.js"></script>
+
+<script>
+
+
+</script>
+
+
+
+<style>
+  .triangle-symbol {
+    font-size: 24px; /* Cambia el tamaño del texto a 24 píxeles */
+    color: red; /* Cambia el color del texto a rojo */
+  }
+</style>
+
+<script>
+  
+    
+    //play video restores the video from the last point
+$("video").on("play", function(event) {
+    // Restaurar el color de fondo y el símbolo de los enlaces anteriores
+    $("#bvideo_playlist a").css("background-color", "initial");
+    $("#bvideo_playlist a .triangle-symbol").remove();
+
+    $storedtime = localStorage.getItem('bvideo-'+btoa(this.src));
+    // Get the time from localStorage and play if not at the end.
+    if ($storedtime < this.duration) 
+        this.currentTime = $storedtime;
+
+    this.play();
+
+    // Resaltar el nombre del video en curso y agregar el símbolo triangular
+    var currentVideoLink = $('a[data-bvideo_id~="'+$(this).attr("data-bvideo_id")+'"]');
+    currentVideoLink.css("background-color", "yellow");
+    currentVideoLink.prepend('<span class="triangle-symbol">&#9654;</span>');
+});
+</script>
+
+
+<script>
+
+//ELIMINA EL LINK AL PONER CLIK DERECHO
+  // Obtén una referencia al elemento con la clase "art-info-content" y atributo data-video="src"
+var srcElement = document.querySelector('.art-info-content[data-video="src"]');
+
+// Verifica si se encontró el elemento antes de intentar ocultarlo
+if (srcElement) {
+  // Oculta el elemento cambiando su estilo
+  srcElement.style.display = 'none';
+}
+
+</script>
+
+
+
+
+
+
+
+
 
