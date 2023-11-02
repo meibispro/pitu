@@ -1,0 +1,2575 @@
+
+
+<!--foto portada abierto-->
+
+<div hidden>
+
+ <div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgeTKB5enFMJRyZ2OmQF-QAid4cx9Lpr-71xFYcYw9J-hIi2jMSndBpJICD636Zcw_0c5eocfId4crdM9I-1YPiU-2MZ2r9bSmZ1g7o4CJ8fLPvaQFg4Bzn-rRI_flfkPd67o-tHhA1e8XoQ36pqnoUEXKUYm_ktTQrFKYEvWsAvLXusxiCPIapDgZV5hQ/s1024/south-park.jpg" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" height="320" data-original-height="1024" data-original-width="718" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgeTKB5enFMJRyZ2OmQF-QAid4cx9Lpr-71xFYcYw9J-hIi2jMSndBpJICD636Zcw_0c5eocfId4crdM9I-1YPiU-2MZ2r9bSmZ1g7o4CJ8fLPvaQFg4Bzn-rRI_flfkPd67o-tHhA1e8XoQ36pqnoUEXKUYm_ktTQrFKYEvWsAvLXusxiCPIapDgZV5hQ/s320/south-park.jpg"/></a></div>
+  
+  </div>
+  <!--foto portada abierto-->
+<style>
+  a {
+  text-decoration: none;
+}
+</style>
+
+<!--CSS ABIERTO DE BOTONES AVANZAR Y RETROCEDER-->
+<style>
+  
+.art-control.art-control-control8 {
+    background-color: #000c;
+    border-radius: 3px;
+    align-items: center;
+    padding: 10px;
+    line-height: 1;
+    position: absolute;
+    bottom: 80px;
+    right: -2px;
+  
+   position: absolute;
+  top: %;
+  left: %;
+ 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+#top{
+    background-color:transparent;
+    color:#fff;
+    border:none;
+    cursor:pointer
+}
+.art-video-player .art-mask .art-state{
+    bottom:100px!important;
+    right:40px!important
+}
+.art-video-player img{
+    width:40px
+}
+
+}
+</style>
+ <!--CSS CIERRE DE BOTONES AVANZAR Y RETROCEDER-->
+
+ <!--CSS DE CANVAS DE FONDO-->
+<style>
+  .container {
+  width: 90%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (min-width: 768px) {
+  .container {
+    width: 50%;
+  }
+}
+
+canvas {
+  position: fixed;
+  width: 110%;
+  height: 110%;
+  filter: blur(70px);
+  -webkit-filter: blur(70px);
+  z-index: -10;
+}
+
+video {
+  position: relative;
+  width: 100%;
+  height: auto;
+  z-index: 11;
+}
+</style>
+ <!--CSS DE CANVAS DE FONDO-->
+ 
+ <style>body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  }
+  
+  #video-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 30vh;
+  z-index: 1;
+  }
+  
+  #artplayer-app {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  }
+  
+  #content {
+  margin-top: 30vh; /* Utiliza "margin-top" en lugar de "padding-top" para permitir el desplazamiento del contenido */
+  }
+  
+  /* Estilo de ejemplo para el contenido */
+  .content-section {
+  background-color: #;
+  padding: 10px;
+  
+  }
+  
+  </style>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+</head>
+<meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'/>
+<body>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+   <script src="https://cdn.jsdelivr.net/npm/artplayer/dist/artplayer.js"></script>
+<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.teal-light_blue.min.css" />
+<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+  
+  
+  
+  
+  
+
+     <canvas id="canvas"></canvas>
+<div id="video-container">
+  
+  <div id="artplayer-app"></div>
+  <!-- Nuevo contenedor -->
+  <div id="video-info-container"></div>
+
+
+
+     
+     
+     
+     
+     
+     
+  <!-- Nuevo contenedor -->
+  <div id="video-info-container">
+    <!-- Contenido de tu nuevo contenedor -->
+    
+    <select id="searchSelect">
+    <option value="">Temporadas</option>
+   <!--   <option value="all">Mostrar Todo</option>  -->
+    <option value="T1">Temporada 1</option>
+<option value="T2">Temporada 2</option>
+<option value="T3">Temporada 3</option>
+<option value="T4">Temporada 4</option>
+<option value="T5">Temporada 5</option>
+<option value="T6">Temporada 6</option>
+<option value="T7">Temporada 7</option>
+<option value="T8">Temporada 8</option>
+<option value="T9">Temporada 9</option>
+<option value="T10">Temporada 10</option>
+<option value="T11">Temporada 11</option>
+<option value="T12">Temporada 12</option>
+
+
+  </select>
+
+  <input type="text" id="search" placeholder="Buscar">
+
+ <style>
+        /* Estilos para el contenedor del video y el fondo */
+        .video-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px; /* Ajusta el ancho máximo según tus necesidades */
+      z-index: 10;
+        }
+        
+        .video-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            filter: blur(10px); /* Ajusta el valor del desenfoque según tus preferencias */
+            z-index: -1;
+        }
+        
+        #artplayer-app {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+    
+    
+  </div>
+</div>
+
+  <div id="content">
+    <!-- Contenido de la página -->
+    <div class="content-section">
+
+   <ol id="bvideo_playlist">
+  
+</ol>
+    <!-- Agrega más contenido según sea necesario -->
+  
+      <p>Este es un ejemplo de contenido.</p>
+    </div>
+    <!-- Agrega más contenido según sea necesario -->
+  </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  // Función para filtrar la lista de reproducción en función de la búsqueda BUSCADOR
+  function filterPlaylist(searchTerm) {
+    searchTerm = searchTerm.toLowerCase();
+    $("#bvideo_playlist li").each(function() {
+      var listItemText = $(this).text().toLowerCase();
+      if (searchTerm === "all" || listItemText.includes(searchTerm)) {
+        $(this).show();
+      } else {
+        $(this).hide();
+      }
+    });
+  }
+
+  $(document).ready(function() {
+    // Establecer la búsqueda predeterminada
+    var searchTermDefault = "";
+    $("#search").val(searchTermDefault);
+    filterPlaylist(searchTermDefault);
+
+    // Agregar un evento de entrada de texto al campo de búsqueda
+    $("#search").on("input", function() {
+      var searchTerm = $(this).val();
+      filterPlaylist(searchTerm);
+    });
+
+    // Agregar un evento al botón de búsqueda
+    $("#searchButton").on("click", function() {
+      var searchTerm = $("#search").val();
+      filterPlaylist(searchTerm);
+    });
+
+    // Agregar eventos a los botones de búsqueda predeterminada
+    $("#defaultButtons button").on("click", function() {
+      var searchTerm = $(this).data("search");
+      $("#search").val(searchTerm);
+      filterPlaylist(searchTerm);
+    });
+
+    // Agregar evento para el cambio en el elemento select
+    $("#searchSelect").on("change", function() {
+      var searchTerm = $(this).val();
+      filterPlaylist(searchTerm);
+      $("#search").val(""); // Vaciar el cuadro de texto al seleccionar una opción
+    });
+  });
+</script>
+
+
+
+
+
+<script>
+    // Obtén una referencia a la lista de videos y al input de búsqueda
+    const videoList = document.getElementById("bvideo_playlist");
+    const searchInput = document.getElementById("searchInput");
+
+    // Agrega un evento al botón de búsqueda para realizar la búsqueda
+    document.getElementById("searchButton").addEventListener("click", function () {
+        const searchTerm = searchInput.value.toLowerCase();
+
+        // Recorre los elementos de la lista y muestra/oculta según la búsqueda
+        Array.from(videoList.getElementsByTagName("li")).forEach(function (item) {
+            const videoTitle = item.textContent.toLowerCase();
+            if (videoTitle.includes(searchTerm)) {
+                item.style.display = "list-item"; // Muestra el elemento
+            } else {
+                item.style.display = "none"; // Oculta el elemento
+            }
+        });
+    });
+</script>
+
+
+    <script>
+        var video_playlist = [
+            {
+    "name": "T1 -1 Piloto",
+    "link": "https://archive.org/download/bbtryyyh/bbteryy1.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 1
+  },
+  {
+    "name": "T1 -2 La hipótesis del Gran Cerebro",
+    "link": "https://archive.org/download/bbtryyyh/bbteryy2.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 2
+  },
+  {
+    "name": "T1 -3 El Corolario de Botas Peludas",
+    "link": "https://archive.org/download/bbtryyyh/bbteryy3.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 3
+  },
+  {
+    "name": "T1 -4 El efecto del pez luminoso",
+    "link": "https://archive.org/download/bbtryyyh/bbteryy4.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 4
+  },
+  {
+    "name": "T1 -5 El postulado de la hamburguesa",
+    "link": "https://archive.org/download/bbtryyyh/bbteryy5.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 5
+  },
+  {
+    "name": "T1 -6 El paradigma de la Tierra Media",
+    "link": "https://archive.org/download/bbtryyyh/bbteryy6.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 6
+  },
+  {
+    "name": "T1 -7 La paradoja del Wan-Tun",
+    "link": "https://archive.org/download/bbtryyyh/bbteryy7.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 7
+  },
+  {
+    "name": "T1 -8 El experimento del Grasshopper",
+    "link": "https://archive.org/download/bbtryyyh/bbteryy8.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 8
+  },
+  {
+    "name": "T1 -9 La polarización Cooper-Hofstadter",
+    "link": "https://archive.org/download/bbtryyyh/bbteryy9.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 9
+  },
+  {
+    "name": "T1 -10 La resultante de Loobenfeld",
+    "link": "https://archive.org/download/bbtryyyh/bbteryy10.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 10
+  },
+  {
+    "name": "T1 -11 La anomalía de la masa de tortitas",
+    "link": "https://archive.org/download/bbtryyyh/bbteryy11.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 11
+  },
+  {
+    "name": "T1 -12 La dualidad de Jerusalén",
+    "link": "https://archive.org/download/bbtryyyh/bbteryy12.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 12
+  },
+  {
+    "name": "T1 -13 La conjetura Bat Jar",
+    "link": "https://archive.org/download/bbtryyyh/bbteryy13.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 13
+  },
+  {
+    "name": "T1 -14 The aniquilación de Nerdvana",
+    "link": "https://archive.org/download/bbtryyyh/bbteryy14.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 14
+  },
+  {
+    "name": "T1 -15 La indeterminación de la chuleta de cerdo",
+    "link": "https://archive.org/download/bbtryyyh/bbteryy15.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 15
+  },
+  {
+    "name": "T1 -16 Reacción al cacahuete",
+    "link": "https://archive.org/download/bbtryyyh/bbteryy16.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 16
+  },
+  {
+    "name": "T1 -17 Factor Mandarina",
+    "link": "https://archive.org/download/bbtryyyh/bbteryy17.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 17
+  },
+
+
+
+
+
+
+
+  {
+    "name": "T2 -1 El paradigma del pescado malo",
+    "link": "https://archive.org/download/bbtryyyh2/2bbteryy1.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 18
+  },
+  {
+    "name": "T2 -2 La Topología Codpiece",
+    "link": "https://archive.org/download/bbtryyyh2/2bbteryy2.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 19
+  },
+  {
+    "name": "T2 -3 La Sublimación Bárbara",
+    "link": "https://archive.org/download/bbtryyyh2/2bbteryy3.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 20
+  },
+  {
+    "name": "T2 -4 La equivalencia de Griffin",
+    "link": "https://archive.org/download/bbtryyyh2/2bbteryy4.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 21
+  },
+  {
+    "name": "T2 -5 La variante de Euclides",
+    "link": "https://archive.org/download/bbtryyyh2/2bbteryy5.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 22
+  },
+  {
+    "name": "T2 -6 El teorema de Cooper-Nowitzki",
+    "link": "https://archive.org/download/bbtryyyh2/2bbteryy6.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 23
+  },
+  {
+    "name": "T2 -7 La Polarización Panti Piñata",
+    "link": "https://archive.org/download/bbtryyyh2/2bbteryy7.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 24
+  },
+  {
+    "name": "T2 -8 La expansión Lagarto-Spock",
+    "link": "https://archive.org/download/bbtryyyh2/2bbteryy8.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 25
+  },
+  {
+    "name": "T2 -9 La triangulación de los espárragos blancos",
+    "link": "https://archive.org/download/bbtryyyh2/2bbteryy9.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 26
+  },
+  {
+    "name": "T2 -10 El Rompecabezas Vartabedian",
+    "link": "https://archive.org/download/bbtryyyh2/2bbteryy10.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 27
+  },
+  {
+    "name": "T2 -11 La hipótesis del regalo de artículo de baño",
+    "link": "https://archive.org/download/bbtryyyh2/2bbteryy11.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 28
+  },
+  {
+    "name": "T2 -12 La Inestabilidad del Robot Asesino",
+    "link": "https://archive.org/download/bbtryyyh2/2bbteryy12.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 29
+  },
+  {
+    "name": "T2 -13 El Algoritmo de la Amistad",
+    "link": "https://archive.org/download/bbtryyyh2/2bbteryy13.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 30
+  },
+  {
+    "name": "T2 -14 La Permeabilidad financiera",
+    "link": "https://archive.org/download/bbtryyyh2/2bbteryy14.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 31
+  },
+  {
+    "name": "T2 -15 La Capacitancia Maternal",
+    "link": "https://archive.org/download/bbtryyyh2/2bbteryy15.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 32
+  },
+  {
+    "name": "T2 -16 La Saturación De Cojín",
+    "link": "https://archive.org/download/bbtryyyh2/2bbteryy16.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 33
+  },
+  {
+    "name": "T2 -17 El desacoplamiento Terminator",
+    "link": "https://archive.org/download/bbtryyyh2/2bbteryy17.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 34
+  },
+  {
+    "name": "T2 -18 El Nanocluster De La Canción De Trabajo",
+    "link": "https://archive.org/download/bbtryyyh2/2bbteryy18.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 35
+  },
+  {
+    "name": "T2 -19 La yuxtaposición de la puta muerta",
+    "link": "https://archive.org/download/bbtryyyh2/2bbteryy19.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 36
+  },
+  {
+    "name": "T2 -20 El Isótopo Hofstadter",
+    "link": "https://archive.org/download/bbtryyyh2/2bbteryy20.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 37
+  },
+  {
+    "name": "T2 -21 La Renormalización de las Vegas",
+    "link": "https://archive.org/download/bbtryyyh2/2bbteryy21.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 38
+  },
+  {
+    "name": "T2 -22 La Turbulencia De Los Materiales Clasificados",
+    "link": "https://archive.org/download/bbtryyyh2/2bbteryy22.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 39
+  },
+  {
+    "name": "T2 -23 La Expedición Monopolar",
+    "link": "https://archive.org/download/bbtryyyh2/2bbteryy23.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 40
+  },
+
+
+
+
+
+
+{
+    "name": "T3 -1 La Fluctuación del Abrelatas Eléctrico",
+    "link": "https://archive.org/download/bbtryyyh3/3bbteryy1.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 41
+  },
+  {
+    "name": "T3 -2 La Conjetura Jiminy",
+    "link": "https://archive.org/download/bbtryyyh3/3bbteryy2.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 42
+  },
+  {
+    "name": "T3 -3 La Desviación Gothowitz",
+    "link": "https://archive.org/download/bbtryyyh3/3bbteryy3.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 43
+  },
+  {
+    "name": "T3 -4 La Solución Pirata",
+    "link": "https://archive.org/download/bbtryyyh3/3bbteryy4.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 44
+  },
+  {
+    "name": "T3 -5 El Corolario del Horrible Recubrimiento de Caramelo",
+    "link": "https://archive.org/download/bbtryyyh3/3bbteryy5.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 45
+  },
+  {
+    "name": "T3 -6 El Vórtice Cornhusker",
+    "link": "https://archive.org/download/bbtryyyh3/3bbteryy6.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 46
+  },
+  {
+    "name": "T3 -7 La Amplificación Guitarrista",
+    "link": "https://archive.org/download/bbtryyyh3/3bbteryy7.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 47
+  },
+  {
+    "name": "T3 -8 La Deficiencia del Pato Adhesivo",
+    "link": "https://archive.org/download/bbtryyyh3/3bbteryy8.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 48
+  },
+  {
+    "name": "T3 -9 La formulación de la venganza",
+    "link": "https://archive.org/download/bbtryyyh3/3bbteryy9.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 49
+  },
+  {
+    "name": "T3 -10 El experimento de Gorila",
+    "link": "https://archive.org/download/bbtryyyh3/3bbteryy10.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 50
+  },
+  {
+    "name": "T3 -11 La Congruencia Materna",
+    "link": "https://archive.org/download/bbtryyyh3/3bbteryy11.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 51
+  },
+  {
+    "name": "T3 -12 El vórtice de Psychic",
+    "link": "https://archive.org/download/bbtryyyh3/3bbteryy12.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 52
+  },
+  {
+    "name": "T3 -13 La reacción en Bozeman",
+    "link": "https://archive.org/download/bbtryyyh3/3bbteryy13.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 53
+  },
+  {
+    "name": "T3 -14 La aproximación Einstein",
+    "link": "https://archive.org/download/bbtryyyh3/3bbteryy14.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 54
+  },
+  {
+    "name": "T3 -15 La colisión de hadrones",
+    "link": "https://archive.org/download/bbtryyyh3/3bbteryy15.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 55
+  },
+  {
+    "name": "T3 -16 La adquisición Excelsior",
+    "link": "https://archive.org/download/bbtryyyh3/3bbteryy16.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 56
+  },
+  {
+    "name": "T3 -17 La fragmentación preciosa",
+    "link": "https://archive.org/download/bbtryyyh3/3bbteryy17.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 57
+  },
+  {
+    "name": "T3 -18 La variante de los pantalones",
+    "link": "https://archive.org/download/bbtryyyh3/3bbteryy18.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 58
+  },
+  {
+    "name": "T3 -19 La recurrencia Wheaton",
+    "link": "https://archive.org/download/bbtryyyh3/3bbteryy19.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 59
+  },
+  {
+    "name": "T3 -20 El catalizador de spaghetti",
+    "link": "https://archive.org/download/bbtryyyh3/3bbteryy20.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 60
+  },
+  {
+    "name": "T3 -21 La estimulación Plimpton",
+    "link": "https://archive.org/download/bbtryyyh3/3bbteryy21.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 61
+  },
+  {
+    "name": "T3 -22 La aplicación de la escalera",
+    "link": "https://archive.org/download/bbtryyyh3/3bbteryy22.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 62
+  },
+  {
+    "name": "T3 -23 La excitación lunar",
+    "link": "https://archive.org/download/bbtryyyh3/3bbteryy23.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 63
+  },
+
+
+
+
+
+
+
+
+{
+    "name": "T4 -1 La manipulación robótica",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy1.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 64
+  },
+  {
+    "name": "T4 -2 La amplificación de verduras crucíferas",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy2.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 65
+  },
+  {
+    "name": "T4 -3 La sustitución zazzy",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy3.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 66
+  },
+  {
+    "name": "T4 -4 La ardiente desviación Troll",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy4.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 67
+  },
+  {
+    "name": "T4 -5 La emanación de la desesperación",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy5.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 68
+  },
+  {
+    "name": "T4 -6 La formulación del bar irlandés",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy6.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 69
+  },
+  {
+    "name": "T4 -7 La disculpa insuficiente",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy7.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 70
+  },
+  {
+    "name": "T4 -8 Los 21 segundos de excitación",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy8.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 71
+  },
+  {
+    "name": "T4 -9 La complejidad del novio",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy9.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 72
+  },
+  {
+    "name": "T4 -10 La hipótesis del parásito",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy10.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 73
+  },
+  {
+    "name": "T4 -11 La recombinación de la liga de la justicia",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy11.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 74
+  },
+  {
+    "name": "T4 -12 La utilización de los pantalones de autobús",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy12.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 75
+  },
+  {
+    "name": "T4 -13 Coche del amor reemplazado",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy13.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 76
+  },
+  {
+    "name": "T4 -14 El catalizador Thespian",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy14.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 77
+  },
+  {
+    "name": "T4 -15 El factor benefactor",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy15.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 78
+  },
+  {
+    "name": "T4 -16 La formulación cohabitación",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy16.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 79
+  },
+  {
+    "name": "T4 -17 La derivación del brindis",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy17.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 80
+  },
+  {
+    "name": "T4 -18 La aproximación prestidigitación",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy18.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 81
+  },
+  {
+    "name": "T4 -19 La incursión Zarnecki",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy19.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 82
+  },
+  {
+    "name": "T4 -20 La germinación del jardín de Herb",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy20.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 83
+  },
+  {
+    "name": "T4 -21 El acuerdo disección",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy21.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 84
+  },
+  {
+    "name": "T4 -22 La implementación Wildebeest",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy22.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 85
+  },
+  {
+    "name": "T4 -23 Reacción de compromiso",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy23.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 86
+  },
+  {
+    "name": "T4 -24 El contrato de compañeros",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy24.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 87
+  },
+
+
+
+
+
+{
+    "name": "T5 -1 Análisis del reflejo de golfa",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy25.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 88
+  },
+  {
+    "name": "T5 -2 La teoría de la plaga",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy26.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 89
+  },
+  {
+    "name": "T5 -3 La extrapolación del tirón de ingle",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy27.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 90
+  },
+  {
+    "name": "T5 -4 El catalizador del dedo que se menea",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy28.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 91
+  },
+  {
+    "name": "T5 -5 La reacción del cohete ruso",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy29.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 92
+  },
+  {
+    "name": "T5 -6 La revelación de la rinitis",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy30.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 93
+  },
+  {
+    "name": "T5 -7 La fluctuación del buen chico",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy31.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 94
+  },
+  {
+    "name": "T5 -8 La permutación del aislamiento",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy32.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 95
+  },
+  {
+    "name": "T5 -9 La difusión de la ornitofobia",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy33.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 96
+  },
+  {
+    "name": "T5 -10 La adquisición de la escupidera llameante",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy34.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 97
+  },
+  {
+    "name": "T5 -11 La recurrencia Speckerman",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy35.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 98
+  },
+  {
+    "name": "T5 -12 La maniobra de la baratija brillante",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy36.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 99
+  },
+  {
+    "name": "T5 -13 La hipótesis de la recombinación",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy37.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 100
+  },
+  {
+    "name": "T5 -14 El inicio de las pruebas beta",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy38.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 101
+  },
+  {
+    "name": "T5 -15 La contracción de la amistad",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy39.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 102
+  },
+  {
+    "name": "T5 -16 La solución de vacaciones",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy40.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 103
+  },
+  {
+    "name": "T5 -17 La desintegración Rothman",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy41.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 104
+  },
+  {
+    "name": "T5 -18 La transformación de hombre lobo",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy42.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 105
+  },
+  {
+    "name": "T5 -19 El vórtice del fin de semana",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy43.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 106
+  },
+  {
+    "name": "T5 -20 La disfunción del transportador",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy44.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 107
+  },
+  {
+    "name": "T5 -21 La excitación de Hawking",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy45.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 108
+  },
+  {
+    "name": "T5 -22 La convergencia de la despedida de soltero",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy46.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 109
+  },
+  {
+    "name": "T5 -23 La aceleración del lanzamiento",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy47.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 110
+  },
+  {
+    "name": "T5 -24 La refleccion del conteo",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy48.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 111
+  },
+
+
+
+
+
+
+
+
+{
+    "name": "T6 -1 La variable de la cita nocturna",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy49.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 112
+  },
+  {
+    "name": "T6 -2 La fluctuación del desacople",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy50.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 113
+  },
+  {
+    "name": "T6 -3 La observación del bosón de Higgs",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy51.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 114
+  },
+  {
+    "name": "T6 -4 La minimización de la reentrada",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy52.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 115
+  },
+  {
+    "name": "T6 -5 La excitación holográfica",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy53.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 116
+  },
+  {
+    "name": "T6 -6 La Aniquilación del Extracto",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy54.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 117
+  },
+  {
+    "name": "T6 -7 La configuración de la cohabitación",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy55.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 118
+  },
+  {
+    "name": "T6 -8 La peculiaridad del 43",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy56.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 119
+  },
+  {
+    "name": "T6 -9 Cereza negra",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy57.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 120
+  },
+  {
+    "name": "T6 -10 El movimiento de las tripas del pescado",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy58.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 121
+  },
+  {
+    "name": "T6 -11 La simulación de Santa",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy59.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 122
+  },
+  {
+    "name": "T6 -12 La equivalencia de la ensalada de huevo",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy60.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 123
+  },
+  {
+    "name": "T6 -13 La Expedición Bakersfield",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy61.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 124
+  },
+  {
+    "name": "T6 -14 La Inversión Cooper-Kripke",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy62.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 125
+  },
+  {
+    "name": "T6 -15 La segmentación alerta Spoiler",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy63.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 126
+  },
+  {
+    "name": "T6 -16 La prueba tangible del afecto",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy64.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 127
+  },
+  {
+    "name": "T6 -17 El aislamiento monstruoso",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy65.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 128
+  },
+  {
+    "name": "T6 -18 La implementación de la obligación contractual",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy66.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 129
+  },
+  {
+    "name": "T6 -19 La reconfiguración del Armario",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy67.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 130
+  },
+  {
+    "name": "T6 -20 La turbulencia de la plaza fija",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy68.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 131
+  },
+  {
+    "name": "T6 -21 La alternativa al fin",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy69.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 132
+  },
+  {
+    "name": "T6 -22 El resurgimiento del protón",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy70.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 133
+  },
+  {
+    "name": "T6 -23 El potencial del hechizo de amor",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy71.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 134
+  },
+  {
+    "name": "T6 -24 La reacción del buen viaje",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy72.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 135
+  },
+
+
+
+
+{
+    "name": "T7 -1 La insuficiencia Hofstadter",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy73.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 136
+  },
+  {
+    "name": "T7 -2 La verificación del engaño",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy74.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 137
+  },
+  {
+    "name": "T7 -3 El vórtice del limpiador",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy75.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 138
+  },
+  {
+    "name": "T7 -4 La minimización de los Raiders",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy76.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 139
+  },
+  {
+    "name": "T7 -5 La proximidad del lugar de trabajo",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy77.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 140
+  },
+  {
+    "name": "T7 -6 La resonancia del romance",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy78.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 141
+  },
+  {
+    "name": "T7 -7 El desplazamiento del protón",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy79.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 142
+  },
+  {
+    "name": "T7 -8 La simulación del picor de cerebro",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy80.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 143
+  },
+  {
+    "name": "T7 -9 El desacoplamiento del Día de Acción de Gracias",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy81.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 144
+  },
+  {
+    "name": "T7 -10 El descubrimiento de la disipación",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy82.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 145
+  },
+  {
+    "name": "T7 -11 La extracción de Cooper V2",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy83.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 146
+  },
+  {
+    "name": "T7 -12 La ramificación de la indecisión",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy84.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 147
+  },
+  {
+    "name": "T7 -13 La recalibración de la ocupación",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy85.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 148
+  },
+  {
+    "name": "T7 -14 La convención Conundrum",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy86.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 149
+  },
+  {
+    "name": "T7 -15 La manipulación de la locomoción",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy87.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 150
+  },
+  {
+    "name": "T7 -16 La polarización de la mesa",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy88.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 151
+  },
+  {
+    "name": "T7 -17 La turbulencia de la amistad",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy89.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 152
+  },
+  {
+    "name": "T7 -18 La observación de mamá",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy90.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 153
+  },
+  {
+    "name": "T7 -19 La indecisión de la amalgamación",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy91.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 154
+  },
+  {
+    "name": "T7 -20 La escisión de la relación",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy92.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 155
+  },
+  {
+    "name": "T7 -21 La recurrencia de Cualquier cosa puede pasar",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy93.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 156
+  },
+  {
+    "name": "T7 -22 La transmogrificación del protón",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy94.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 157
+  },
+  {
+    "name": "T7 -23 La disolución del gorila",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy95.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 158
+  },
+  {
+    "name": "T7 -24 La combustión del status quo",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy96.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 159
+  },
+
+
+
+
+
+
+
+{
+    "name": "T8 -1 La interrupción de la locomoción",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy97.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 160
+  },
+  {
+    "name": "T8 -2 La solución del profesor adjunto",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy98.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 161
+  },
+  {
+    "name": "T8 -3 La insuficiencia del primer lanzamiento",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy99.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 162
+  },
+  {
+    "name": "T8 -4 Las consecuencias de salir con alguien",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy100.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 163
+  },
+  {
+    "name": "T8 -5 La atenuación del foco",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy101.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 164
+  },
+  {
+    "name": "T8 -6 La expedición hacia la aproximación",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy102.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 165
+  },
+  {
+    "name": "T8 -7 La agitación de la malinterpretación",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy103.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 166
+  },
+  {
+    "name": "T8 -8 La equivalencia de graduación",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy104.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 167
+  },
+  {
+    "name": "T8 -9 La desviación del tabique",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy105.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 168
+  },
+  {
+    "name": "T8 -10 La reflexión del champán",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy106.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 169
+  },
+  {
+    "name": "T8 -11 La infiltración de la habitación limpia",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy107.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 170
+  },
+  {
+    "name": "T8 -12 La desintegración de la sonda espacial",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy108.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 171
+  },
+  {
+    "name": "T8 -13 La optimización de la ansiedad",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy109.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 172
+  },
+  {
+    "name": "T8 -14 La manifestación del troll",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy110.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 173
+  },
+  {
+    "name": "T8 -15 La regeneración de la tienda de cómics",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy111.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 174
+  },
+  {
+    "name": "T8 -16 La aceleración de la intimidad",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy112.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 175
+  },
+  {
+    "name": "T8 -17 La solicitud de colonización",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy113.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 176
+  },
+  {
+    "name": "T8 -18 La termalización sobrante",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy114.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 177
+  },
+  {
+    "name": "T8 -19 La incursión en Skywalker",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy115.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 178
+  },
+  {
+    "name": "T8 -20 La implementación de la fortificación",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy116.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 179
+  },
+  {
+    "name": "T8 -21 La degradación de la comunicación",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy117.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 180
+  },
+  {
+    "name": "T8 -22 La transmisión de la graduación",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy118.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 181
+  },
+  {
+    "name": "T8 -23 La combustión maternal",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy119.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 182
+  },
+  {
+    "name": "T8 -24 La determinación del compromiso",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy120.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 183
+  },
+
+
+
+
+{
+    "name": "T9 -1 El momento matrimonial",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy121.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 184
+  },
+  {
+    "name": "T9 -2 La oscilación de la separación",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy122.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 185
+  },
+  {
+    "name": "T9 -3 La corrosión de la despedida de soltero",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy123.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 186
+  },
+  {
+    "name": "T9 -4 La aproximación a 2003",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy124.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 187
+  },
+  {
+    "name": "T9 -5 La implementación de la perspiración",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy125.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 188
+  },
+  {
+    "name": "T9 -6 La insuficiencia de helio",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy126.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 189
+  },
+  {
+    "name": "T9 -7 La resonancia de Spock",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy127.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 190
+  },
+  {
+    "name": "T9 -8 La observación de la cita misteriosa",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy128.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 191
+  },
+  {
+    "name": "T9 -9 La permutación platónica",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy129.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 192
+  },
+  {
+    "name": "T9 -10 La reverberación de la melodía",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy130.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 193
+  },
+  {
+    "name": "T9 -11 La excitación del estreno",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy131.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 194
+  },
+  {
+    "name": "T9 -12 La sublimación de la venta",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy132.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 195
+  },
+  {
+    "name": "T9 -13 La optimización de la empatía",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy133.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 196
+  },
+  {
+    "name": "T9 -14 La materialización de la abuelita",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy134.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 197
+  },
+  {
+    "name": "T9 -15 La inmersión de Valentino",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy135.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 198
+  },
+  {
+    "name": "T9 -16 La reacción positivo-negativa",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy136.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 199
+  },
+  {
+    "name": "T9 -17 La experimentación de la celebración",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy137.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 200
+  },
+  {
+    "name": "T9 -18 El deterioro de la soledad",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy138.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 201
+  },
+  {
+    "name": "T9 -19 La excursión a por soldadura",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy139.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 202
+  },
+  {
+    "name": "T9 -20 La precipitación del oso gigante",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy140.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 203
+  },
+  {
+    "name": "T9 -21 La combustión de la fiesta televisiva",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy141.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 204
+  },
+  {
+    "name": "T9 -22 La fermentación de la bifurcación",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy142.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 205
+  },
+  {
+    "name": "T9 -23 La solución de la sustitución en la linea",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy143.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 206
+  },
+  {
+    "name": "T9 -24 La convergencia de la convergencia",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy144.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 207
+  },
+
+
+
+
+
+
+
+
+{
+    "name": "T10 -1 La conjetura conyugal",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy145.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 208
+  },
+  {
+    "name": "T10 -2 La miniaturización militar",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy146.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 209
+  },
+  {
+    "name": "T10 -3 La trascendencia de la dependencia",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy147.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 210
+  },
+  {
+    "name": "T10 -4 La experimentación de la convivencia",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy148.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 211
+  },
+  {
+    "name": "T10 -5 La contaminación de la bañera de hidromasaje",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy149.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 212
+  },
+  {
+    "name": "T10 -6 El catalizador de la patada fetal",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy150.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 213
+  },
+  {
+    "name": "T10 -7 La elasticidad de la veracidad",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy151.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 214
+  },
+  {
+    "name": "T10 -8 La incubación del Brain Bowl",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy152.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 215
+  },
+  {
+    "name": "T10 -9 The Geology Elevation",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy153.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 216
+  },
+  {
+    "name": "T10 -10 The Property Division Collision",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy154.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 217
+  },
+  {
+    "name": "T10 -11 La sincronicidad del cumpleaños",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy155.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 218
+  },
+  {
+    "name": "T10 -12 Resumen de vacaciones",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy156.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 219
+  },
+  {
+    "name": "T10 -13 The Romance Recalibration",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy157.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 220
+  },
+  {
+    "name": "T10 -14 La automatización de detección de emociones",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy158.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 221
+  },
+  {
+    "name": "T10 -15 The Locomotion Reverberation",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy159.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 222
+  },
+  {
+    "name": "T10 -16 La evaporación de tolerancia",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy160.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 223
+  },
+  {
+    "name": "T10 -17 El dilema de la Comic-Con",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy161.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 224
+  },
+  {
+    "name": "T10 -18 Identificación de la escotilla de escape",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy162.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 225
+  },
+  {
+    "name": "T10 -19 The Collaboration Fluctuation",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy163.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 226
+  },
+  {
+    "name": "T10 -20 La disipación del recuerdo",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy164.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 227
+  },
+  {
+    "name": "T10 -21 The Separation Agitation",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy165.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 228
+  },
+  {
+    "name": "T10 -22 La regeneración cognitiva",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy166.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 229
+  },
+  {
+    "name": "T10 -23 El colapso giroscópico",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy167.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 230
+  },
+  {
+    "name": "T10 -24 La disonancia de larga distancia",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy168.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 231
+  },
+
+
+
+
+
+
+
+{
+    "name": "T11 -1 La propuesta de propuesta",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy169.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 232
+  },
+  {
+    "name": "T11 -2 La reacción de retracción",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy170.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 233
+  },
+  {
+    "name": "T11 -3 The Relaxation Integration",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy171.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 234
+  },
+  {
+    "name": "T11 -4 The Explosion Implosion",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy172.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 235
+  },
+  {
+    "name": "T11 -5 The Collaboration Contamination",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy173.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 236
+  },
+  {
+    "name": "T11 -6 La regeneración de protones",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy174.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 237
+  },
+  {
+    "name": "T11 -7 La Metodología de la Geología",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy175.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 238
+  },
+  {
+    "name": "T11 -8 El retroceso de Tesla",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy176.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 239
+  },
+  {
+    "name": "T11 -9 El entrelazamiento de Bitcoin",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy177.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 240
+  },
+  {
+    "name": "T11 -10 La erosión de la confianza",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy178.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 241
+  },
+  {
+    "name": "T11 -11 La reverberación de la celebración",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy179.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 242
+  },
+  {
+    "name": "T11 -12 Métrica matrimonial",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy180.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 243
+  },
+  {
+    "name": "T11 -13 The Solo Oscillation",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy181.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 244
+  },
+  {
+    "name": "T11 -14 La Triangulación de Separación",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy182.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 245
+  },
+  {
+    "name": "T11 -15 La correlación de novelización",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy183.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 246
+  },
+  {
+    "name": "T11 -16 La nomenclatura neonatal",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy184.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 247
+  },
+  {
+    "name": "T11 -17 The Athenaeum Allocation",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy185.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 248
+  },
+  {
+    "name": "T11 -18 La excitación de Gates",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy186.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 249
+  },
+  {
+    "name": "T11 -19 The Tenant Disassociation",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy187.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 250
+  },
+  {
+    "name": "T11 -20 El potencial solitario",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy188.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 251
+  },
+  {
+    "name": "T11 -21 La polarización del cometa",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy189.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 252
+  },
+  {
+    "name": "T11 -22 La insuficiencia monetaria",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy190.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 253
+  },
+  {
+    "name": "T11 -23 El realineamiento de hermanos",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy191.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 254
+  },
+  {
+    "name": "T11 -24 La asimetría de la pajarita",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy192.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 255
+  },
+
+
+
+{
+    "name": "T12 -1 La configuración conyugal",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy193.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 256
+  },
+  {
+    "name": "T12 -2 El agujero de gusano del regalo de bodas",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy194.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 257
+  },
+  {
+    "name": "T12 -3 El cálculo de la procreación",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy195.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 258
+  },
+  {
+    "name": "T12 -4 La turbulencia de Tam",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy196.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 259
+  },
+  {
+    "name": "T12 -5 The Planetarium Collision",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy197.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 260
+  },
+  {
+    "name": "T12 -6 La perturbación de la imitación",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy198.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 261
+  },
+  {
+    "name": "T12 -7 La derivación de la asignación de subvenciones",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy199.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 262
+  },
+  {
+    "name": "T12 -8 La desviación de la consumación",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy200.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 263
+  },
+  {
+    "name": "T12 -9 The Quote Negation",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy201.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 264
+  },
+  {
+    "name": "T12 -10 La iluminación de la videograbadora",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy202.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 265
+  },
+  {
+    "name": "T12 -11 The Paintball Scattering",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy203.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 266
+  },
+  {
+    "name": "T12 -12 La propuesta de propagación",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy204.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 267
+  },
+  {
+    "name": "T12 -13 La polarización de la confirmación",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy205.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 268
+  },
+  {
+    "name": "T12 -14 El evento del meteorito",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy206.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 269
+  },
+  {
+    "name": "T12 -15 La oscilación de la donación",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy207.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 270
+  },
+  {
+    "name": "T12 -16 El Vórtice D y D",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy208.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 271
+  },
+  {
+    "name": "T12 -17 The Conference Valuation",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy209.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 272
+  },
+  {
+    "name": "T12 -18 La acumulación de laureados",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy210.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 273
+  },
+  {
+    "name": "T12 -19 La privación de inspiración",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy211.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 274
+  },
+  {
+    "name": "T12 -20 The Decision Reverberation",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy212.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 275
+  },
+  {
+    "name": "T12 -21 El cisma del plagio",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy213.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 276
+  },
+  {
+    "name": "T12 -22 The Maternal Conclusion",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy214.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 277
+  },
+  {
+    "name": "T12 -23 La constante de cambio",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy215.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 278
+  },
+  {
+    "name": "T12 -24 El síndrome de Estocolmo",
+    "link": "https://archive.org/download/bbtryyyh4/4bbteryy216.mp4?v=.mp4",
+    "size": 5000,
+    "poster": "",
+    "numero": 279
+  },
+    
+    
+    
+    
+    
+            
+        ];
+          
+          
+</script>
+
+
+<script>
+  var time = 10;
+  var art = new Artplayer({
+    container: '#artplayer-app',
+    url: 'https://www.artplayer.org/assets/sample/video.mp4',
+    poster: 'https://www.artplayer.org/assets/sample/poster.jpg',
+    autoSize: false,
+    loop: true,
+    mutex: true,
+    setting: true,
+    flip: true,
+    lock: true,
+     autoplay: true,
+    fastForward: true,
+    playbackRate: true,
+    aspectRatio: true,
+    volume: 1,
+    theme: 'red',
+    fullscreen: true,
+    fullscreenWeb: true,
+    miniProgressBar: true,
+    autoOrientation: true,
+    airplay: true,
+    controls: [{
+            tooltip: 'Avançar OP/ED',
+            position: 'right',
+            html: '<button id="top" type="button" >Pular OP!</button>',
+            click: function(_, event) {
+                // The second parameter is an event object
+                time += 10;
+                art.forward = 85;
+            },
+        },
+        {
+            position: 'left',
+            html: '<i id="boton-desplazar" class="fas fa-undo fa-1x" style="color: #bfbfbf;"></i>',
+            tooltip: 'retroceder 10s',
+            style: {
+                color: 'green',
+            },
+            click: function(_, event) {
+                // The second parameter is an event object
+                time += 10;
+                art.backward = 10;
+            },
+        },
+        {
+            position: 'left',
+            html: '<i class="fas fa-redo fa-1x" style="color: #bfbfbf;"></i>',
+            tooltip: 'avanzar 10s',
+            style: {
+                color: 'green',
+            },
+            click: function(_, event) {
+                // The second parameter is an event object
+                time += 10;
+                art.forward = 10;
+            },
+        },
+
+    ],
+    moreVideoAttr: {
+        'x5-video-player-type': 'h5',
+        'x5-video-player-fullscreen': false,
+        'x5-video-orientation': 'portraint',
+        preload: "metadata"
+    },
+    subtitle: {
+        url: 'https://meibispro.github.io/pitu/webig/codofplay/listserie/sub.srt',
+        style: {
+            color: '#48aff0',
+            fontSize: '16px',
+        },
+    },
+    layers: [
+        {
+            html: `<img width="50" src="https://www.artplayer.org/assets/sample/layer.png">`,
+            click: function () {
+                art.notice.show = "你点击了自定义层";
+            },
+            style: {
+                position: 'absolute',
+                top: '10px',
+                right: '10px',
+                opacity: '.9',
+            },
+        },
+    ],
+    icons: {
+        loading: '<img src="https://www.artplayer.org/assets/img/ploading.gif">',
+        state: '<img width="150" heigth="150" src="https://www.artplayer.org/assets/img/state.svg">',
+        indicator: '<img width="35" height="20" src="https://assets.stickpng.com/images/580b57fcd9996e24bc43c3de.png">',
+    },
+    settings: [
+        {
+            width: 200,
+            html: '切换字幕',
+            tooltip: '双语',
+            icon: '<img width="22" heigth="22" src="https://www.artplayer.org/assets/img/subtitle.svg">',
+            selector: [
+                {
+                    html: '开关',
+                    switch: true,
+                    tooltip: '显示',
+                    onSwitch: function (item) {
+                        item.tooltip = item.switch ? '隐藏' : '显示';
+                        art.subtitle.show = !item.switch;
+                        return !item.switch;
+                    },
+                },
+                {
+                    default: true,
+                    html: '双语',
+                    url: 'https://meibispro.github.io/pitu/webig/codofplay/listserie/sub.srt'
+                },
+                {
+                    html: '中文',
+                    url: 'https://www.artplayer.org/assets/sample/subtitle.cn.srt'
+                },
+                {
+                    html: '日文',
+                    url: 'https://www.artplayer.org/assets/sample/subtitle.jp.srt'
+                },
+            ],
+            onSelect: function (item) {
+                art.subtitle.switch(item.url, {
+                    name: item.html
+                });
+                return item.html;
+            },
+        },
+    ],
+});
+</script>
+
+
+
+</body>
+</html>
+</body>
+</html>
+
+
+
+ <script src="https://meibispro.github.io/pitu/webig/codofplay/play20scry.js"></script>
+
+<script>
+
+
+</script>
+
+
+
+<style>
+  .triangle-symbol {
+    font-size: 24px; /* Cambia el tamaño del texto a 24 píxeles */
+    color: red; /* Cambia el color del texto a rojo */
+  }
+</style>
+
+<script>
+  
+    
+    //play video restores the video from the last point
+$("video").on("play", function(event) {
+    // Restaurar el color de fondo y el símbolo de los enlaces anteriores
+    $("#bvideo_playlist a").css("background-color", "initial");
+    $("#bvideo_playlist a .triangle-symbol").remove();
+
+    $storedtime = localStorage.getItem('bvideo-'+btoa(this.src));
+    // Get the time from localStorage and play if not at the end.
+    if ($storedtime < this.duration) 
+        this.currentTime = $storedtime;
+
+    this.play();
+
+    // Resaltar el nombre del video en curso y agregar el símbolo triangular
+    var currentVideoLink = $('a[data-bvideo_id~="'+$(this).attr("data-bvideo_id")+'"]');
+    currentVideoLink.css("background-color", "yellow");
+    currentVideoLink.prepend('<span class="triangle-symbol"><img width="20" height="20" src="https://meibispro.github.io/pitu/webig/codofplay/listserie/calabaza.png"></span>');
+});
+</script>
+
+
+<script>
+
+//ELIMINA EL LINK AL PONER CLIK DERECHO
+  // Obtén una referencia al elemento con la clase "art-info-content" y atributo data-video="src"
+var srcElement = document.querySelector('.art-info-content[data-video="src"]');
+
+// Verifica si se encontró el elemento antes de intentar ocultarlo
+if (srcElement) {
+  // Oculta el elemento cambiando su estilo
+  srcElement.style.display = 'none';
+}
+
+</script>
+
+<script>
+  var canvas = document.getElementById("canvas");
+var ctx = canvas.getContext("2d");
+
+// Selecciona el elemento de video dentro del contenedor "artplayer-app"
+var videoContainer = document.getElementById("artplayer-app");
+var video = videoContainer.querySelector("video");
+
+video.addEventListener(
+  "play",
+  function () {
+    var $this = this;
+    (function loop() {
+      if (!$this.paused && !$this.ended) {
+        ctx.drawImage(
+          $this,
+          0,
+          0,
+          $this.videoWidth,
+          $this.videoHeight,
+          0,
+          0,
+          canvas.width,
+          canvas.height
+        );
+        setTimeout(loop, 1000 / 30);
+      }
+    })();
+  },
+  0
+);
+
+</script>
