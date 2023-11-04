@@ -1,5 +1,5 @@
 {
-    "redireccionURL": "https://ggbell.000webhostapp.com/bloggger/popo.html",
-    "nuevaVentana": "off",
-    "temporizador": 0
+  "redireccionURL": "https://meibispro.github.io/pitu/webig/v2/home/home.html", // La URL a la que deseas redirigir
+  "nuevaVentana": "on", // Opciones: "on" para abrir en una nueva ventana, "off" para abrir en la misma ventana
+  "temporizador": 5 // El tiempo de espera en segundos antes de la redirección
 }
