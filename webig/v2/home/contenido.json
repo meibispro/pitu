@@ -37,6 +37,82 @@
             "preroll": [],
             "listeners": "46",
             "lastPlaying": "Jimmy Mack - My World Is On Fire"
+        },
+      {
+            "id": "southpark",
+            "title": "South park",
+            "description": "Una serie de dibujos animados que no es para niños. De hecho, su objetivo parece ser el ofender a la mayoría de personas posibles, mientras presenta las aventuras de Stan, Kyle, Kenny y Cartman.",
+            "temp": "Dion Watts Garcia",
+            "djmail": "dion@somafm.com",
+            "cap": "oldies",
+            "image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj3OqKwgTUahDYsU8YPGd7qntG2bpw9XYwiVTbHRNybMwi5mp2N9J2-qmBWg_GV_sEK052BpiGgGYyx_poYMGxVyEwKduCLlmb9pKD_Nc6KeYVNrrJQqEY4G8oeALB_fhOA0NwpCmqNX6DPl2aqshE8cR1Jlz7kF0C4fYrJgFqv4wDVLkxmi6c0AapUruw/s800/62DCFDSGH5BARHMSABS35RLTCM.jpg",
+            "largeimage": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj3OqKwgTUahDYsU8YPGd7qntG2bpw9XYwiVTbHRNybMwi5mp2N9J2-qmBWg_GV_sEK052BpiGgGYyx_poYMGxVyEwKduCLlmb9pKD_Nc6KeYVNrrJQqEY4G8oeALB_fhOA0NwpCmqNX6DPl2aqshE8cR1Jlz7kF0C4fYrJgFqv4wDVLkxmi6c0AapUruw/s800/62DCFDSGH5BARHMSABS35RLTCM.jpg",
+            "xlimage": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj3OqKwgTUahDYsU8YPGd7qntG2bpw9XYwiVTbHRNybMwi5mp2N9J2-qmBWg_GV_sEK052BpiGgGYyx_poYMGxVyEwKduCLlmb9pKD_Nc6KeYVNrrJQqEY4G8oeALB_fhOA0NwpCmqNX6DPl2aqshE8cR1Jlz7kF0C4fYrJgFqv4wDVLkxmi6c0AapUruw/s800/62DCFDSGH5BARHMSABS35RLTCM.jpg",
+            "twitter": "https://meibispro.github.io/pitu/webig/codofplay/listserie/v5.html",
+            "updated": "1396144686",
+            "playlists": [
+                {
+                    "url": "https://api.somafm.com/7soul.pls",
+                    "format": "mp3",
+                    "quality": "highest"
+                },
+                {
+                    "url": "https://api.somafm.com/7soul130.pls",
+                    "format": "aac",
+                    "quality": "highest"
+                },
+                {
+                    "url": "https://api.somafm.com/7soul64.pls",
+                    "format": "aacp",
+                    "quality": "high"
+                },
+                {
+                    "url": "https://api.somafm.com/7soul32.pls",
+                    "format": "aacp",
+                    "quality": "low"
+                }
+            ],
+            "preroll": [],
+            "listeners": "46",
+            "lastPlaying": "Jimmy Mack - My World Is On Fire"
+        },
+      {
+            "id": "bigbangteory",
+            "title": "Bingbang teory",
+            "description": "Los físicos Leonard y Sheldon descubren que su círculo social centrado en los nerds con sus amigos Howard y Raj se expande cuando la aspirante a actriz Penny se muda a la casa de al lado.",
+            "temp": "Dion Watts Garcia",
+            "djmail": "dion@somafm.com",
+            "cap": "oldies",
+            "image": "https://image.tmdb.org/t/p/w500/ag0xJcZYNmi3SdiI9zGaJNCciaP.jpg",
+            "largeimage": "https://image.tmdb.org/t/p/w500/ag0xJcZYNmi3SdiI9zGaJNCciaP.jpg",
+            "xlimage": "https://image.tmdb.org/t/p/w500/ag0xJcZYNmi3SdiI9zGaJNCciaP.jpg",
+            "twitter": "https://meibispro.github.io/pitu/webig/codofplay/listserie/tbbang.html",
+            "updated": "1396144686",
+            "playlists": [
+                {
+                    "url": "https://api.somafm.com/7soul.pls",
+                    "format": "mp3",
+                    "quality": "highest"
+                },
+                {
+                    "url": "https://api.somafm.com/7soul130.pls",
+                    "format": "aac",
+                    "quality": "highest"
+                },
+                {
+                    "url": "https://api.somafm.com/7soul64.pls",
+                    "format": "aacp",
+                    "quality": "high"
+                },
+                {
+                    "url": "https://api.somafm.com/7soul32.pls",
+                    "format": "aacp",
+                    "quality": "low"
+                }
+            ],
+            "preroll": [],
+            "listeners": "46",
+            "lastPlaying": "Jimmy Mack - My World Is On Fire"
         }
     ]
 }
