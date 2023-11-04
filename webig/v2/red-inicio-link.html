@@ -3,6 +3,9 @@
 <head>
     <title>Redirección</title>
 </head>
+
+Revisando actualizaciones
+  
 <body>
     <script>
         // Función para realizar la solicitud JSON
@@ -16,7 +19,7 @@
         }
 
         // Realiza la solicitud para obtener el primer archivo JSON
-        fetchJSON('https://meibispro.github.io/pitu/webig/archivo.json')
+        fetchJSON('https://meibispro.github.io/pitu/webig/v2/red-inicio-link1.json')
             .then(data => {
                 // Extrae la URL de redirección del archivo JSON
                 const redireccionURL = data.redireccionURL;
@@ -44,7 +47,7 @@
             })
             .catch(() => {
                 // Si la primera solicitud falla, intenta obtener el segundo JSON
-                fetchJSON('https://meibispro.github.io/pitu/webig/archiv.json')
+                fetchJSON('https://meibispro.github.io/pitu/webig/v2/red-inicio-link2.json')
                     .then(data => {
                         const redireccionURL = data.redireccionURL;
                         const nuevaVentana = data.nuevaVentana;
