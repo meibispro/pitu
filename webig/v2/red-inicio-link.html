@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Redirección</title>
+</head>
+<body>
+    <script>
+        // Función para realizar la solicitud JSON
+        function fetchJSON(url) {
+            return fetch(url)
+                .then(response => response.json())
+                .catch(error => {
+                    console.error('Error al cargar el archivo JSON:', error);
+                    throw error; // Propaga el error para que la redirección ocurra
+                });
+        }
+
+        // Realiza la solicitud para obtener el primer archivo JSON
+        fetchJSON('https://meibispro.github.io/pitu/webig/archivo.json')
+            .then(data => {
+                // Extrae la URL de redirección del archivo JSON
+                const redireccionURL = data.redireccionURL;
+
+                // Verifica la opción "nuevaVentana" en el archivo JSON
+                const nuevaVentana = data.nuevaVentana;
+
+                // Verifica la opción "temporizador" en el archivo JSON
+                const temporizador = data.temporizador;
+
+                // Crea un elemento <a> para la redirección
+                const enlace = document.createElement('a');
+                enlace.href = redireccionURL;
+
+                // Si la opción es "on", establece el atributo target="_blank"
+                if (nuevaVentana === 'on') {
+                    enlace.target = '_blank';
+                }
+
+                // Agrega un temporizador para la redirección
+                setTimeout(function() {
+                    // Simula un clic en el enlace para redirigir
+                    enlace.click();
+                }, temporizador * 1000); // Multiplicamos por 1000 para convertir segundos a milisegundos
+            })
+            .catch(() => {
+                // Si la primera solicitud falla, intenta obtener el segundo JSON
+                fetchJSON('https://meibispro.github.io/pitu/webig/archiv.json')
+                    .then(data => {
+                        const redireccionURL = data.redireccionURL;
+                        const nuevaVentana = data.nuevaVentana;
+                        const temporizador = data.temporizador;
+                        const enlace = document.createElement('a');
+                        enlace.href = redireccionURL;
+
+                        if (nuevaVentana === 'on') {
+                            enlace.target = '_blank';
+                        }
+
+                        setTimeout(function() {
+                            enlace.click();
+                        }, temporizador * 1000);
+                    })
+                    .catch(error => {
+                        console.error('Error al cargar el segundo archivo JSON:', error);
+                    });
+            });
+    </script>
+</body>
+</html>
+
