@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Simple Metas -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <!-- title -->
+  <title>Template blog test</title>
+  <!-- css file -->
+  <link rel="stylesheet" href="app.css">
+</head>
+
+  <body>
+    <a href="example.html"> Example </a> 
+    <!-- the blog id -->
+    <div id="blog" class="wrapper"></div>
+      
+    <!-- javascript -->
+    <script src="app.js"></script>
+    <script type="text/javascript">
+      app.applisten(window, 'load', function(){
+           app.loadPage('#blog','README.MD');
+      });
+    </script>
+  
+  </body>
+</html>
