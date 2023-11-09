@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Simple Metas -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <!-- title -->
+  <title>Template blog test</title>
+  <!-- css file -->
+  <link rel="stylesheet" href="app.css">
+</head>
+
+<body>
+
+  <div class="loader">
+      <div id="outline">
+        <div class="circle">
+        </div>
+      </div>
+  </div>
+  
+  <h1>Basic blog item</h1>
+  <a href="example.html"> Back to the example pots </a>
+  
+  <!-- the blog id -->
+  <div id="blog_item" class="wrapper"></div>
+      
+  <!-- javascript -->
+  <script src="app.js"></script>
+  <script>
+    var _ = app;
+        window.addEventListener('load', function(){
+          _.cache.container = '#blog_item';
+          _.cache.num = 3; 
+          _._tmpl = function(id,date,author,title,description,photo,content){
+            var html ='<div id="id_'+id+'" class="box">\n'+
+            '<h3>'+author+'</h3>\n'+ // author
+            '<span class="blog_date">' + date + '</span>\n' + // date
+            '<figure>'+
+            '<img src="'+photo+'"/>\n'+ // photo
+            '<figcaption>'+title+'</figcaption>\n'+ // title'
+            '</figure>'+
+            '<p>'+content+'</p>\n'+ // description
+            '</div>\n';
+            return html;
+          }
+          _.init();
+        });
+  </script>
+</body>
+</html>
